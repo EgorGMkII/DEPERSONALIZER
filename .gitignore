@@ -1,0 +1,24 @@
+# Python / Environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+myenv/
+.idea/
+.vscode/
+
+# Project PDF files in root
+/*.pdf
+!/debug_output/*.pdf
+
+# Jupyter Notebooks & Agent Files
+*.ipynb
+AGENTS.md
+.agents/
+
+# Operating System
+.DS_Store
+Thumbs.db

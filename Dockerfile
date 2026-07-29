@@ -4,6 +4,10 @@ FROM python:3.10-slim
 # Prevent Python from writing .pyc files and enable unbuffered logging
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV DEBIAN_FRONTEND=noninteractive
+ENV OMP_NUM_THREADS=4
+ENV MKL_NUM_THREADS=4
+ENV OPENBLAS_NUM_THREADS=4
 
 # Install required Linux system packages (poppler for pdf2image, libgl1/libglx-mesa0/libgomp1 for OpenCV & PaddleOCR)
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -18,9 +22,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Set working directory
 WORKDIR /app
 
-# Install Python dependencies
+# Install Python dependencies (with multi-threaded Intel MKL PaddlePaddle CPU build)
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir paddlepaddle -i https://www.paddlepaddle.org.cn/packages/stable/cpu/ && \
+    pip install --no-cache-dir -r requirements.txt
 
 # Copy application source code
 COPY src/ ./src/
@@ -34,8 +39,8 @@ RUN mkdir -p jobs_data debug_output
 # Expose FastAPI port
 EXPOSE 8000
 
-# Health check endpoint
-HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+# Health check endpoint (generous timeouts for heavy CPU OCR operations)
+HEALTHCHECK --interval=60s --timeout=30s --start-period=60s --retries=10 \
   CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"
 
 # Run FastAPI app with Uvicorn

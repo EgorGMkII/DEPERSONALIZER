@@ -50,6 +50,8 @@ REGEX_PATTERNS = [
     re.compile(r'\b[А-ЯЁA-Z]\.\s?[А-ЯЁA-Z]\.?[\)\.\,]*\s?[А-ЯЁA-Z][а-яёA-Za-z\-]+\b'),
     # Surname + Initials (e.g., "Некрасову М.В." or "(Некрасов М.В.).")
     re.compile(r'\b[А-ЯЁA-Z][а-яёA-Za-z\-]+\s+[А-ЯЁA-Z]\.\s?[А-ЯЁA-Z]\.?[\)\.\,]*'),
+    # Universal hyphenated phone / ID / code sequence (e.g. S-953-764-S6-88, 8-953-764-56-88)
+    re.compile(r'\b[A-Za-z0-9]{1,4}(?:-[A-Za-z0-9]{1,4}){2,}\b'),
     # Standalone Initials (1 or 2 dots, Cyrillic/Latin, e.g. "A.A", "М.В.")
     re.compile(r'\b[А-ЯЁA-Z]\.\s?[А-ЯЁA-Z]\.?[\)\.\,]*|\b[А-ЯЁA-Z][А-ЯЁA-Z]\.[\)\.\,]*'),
 ]

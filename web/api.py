@@ -17,7 +17,7 @@ from src.pii import PIIDetector
 from src.masker import PageMasker
 
 from .schemas import AnonymizeResponse, JobStatusResponse, HealthResponse
-from .services import JOBS_DIR, jobs_db, execute_anonymization_job
+from .services import JOBS_DIR, jobs_db, save_jobs_db, execute_anonymization_job
 
 STATIC_DIR = "static"
 
@@ -78,6 +78,7 @@ async def submit_anonymization(background_tasks: BackgroundTasks, file: UploadFi
         "masked_tokens_count": 0,
         "error": None
     }
+    save_jobs_db()
 
     # Dispatch background task
     background_tasks.add_task(

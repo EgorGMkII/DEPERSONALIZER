@@ -352,6 +352,12 @@
       pollInterval = setInterval(async () => {
         try {
           const res = await fetch(`/api/v1/jobs/${jobId}`);
+          if (res.status === 404) {
+            clearInterval(pollInterval);
+            spinner.style.display = 'none';
+            statusText.textContent = 'Задача не найдена (сервер был перезапущен). Пожалуйста, загрузите файл заново.';
+            return;
+          }
           if (!res.ok) return;
 
           const data = await res.json();

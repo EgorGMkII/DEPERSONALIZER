@@ -10,11 +10,14 @@ myenv/
 .idea/
 .vscode/
 
-# Project PDF files in root
-/*.pdf
-!/debug_output/*.pdf
+# Debug output & dynamic jobs data
+debug_output/
+jobs_data/
 
-# Jupyter Notebooks & Agent Files
+# Generated PDF files
+*.pdf
+
+# Notebooks & temporary test scripts
 *.ipynb
 AGENTS.md
 .agents/

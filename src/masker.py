@@ -1,11 +1,12 @@
 """
 Masking and Polygon Expansion Module (Stage 3).
+Operates on 2-level LineContainers and child Word Tokens.
 """
 
 import os
 from typing import List, Tuple
 from PIL import Image, ImageDraw
-from .config import Token
+from .config import Token, LineContainer
 
 
 def expand_polygon(poly: List[List[int]], padding_px: int) -> List[Tuple[int, int]]:
@@ -32,19 +33,21 @@ def expand_polygon(poly: List[List[int]], padding_px: int) -> List[Tuple[int, in
 
 
 class PageMasker:
-    def mask_page(self, image: Image.Image, tokens: List[Token], padding_px: int = 2) -> Image.Image:
-        """Draws black polygons over tokens marked as PII."""
+    def mask_page(self, image: Image.Image, lines: List[LineContainer], padding_px: int = 2) -> Image.Image:
+        """Draws black polygons over child Word Tokens marked as PII."""
         masked_img = image.copy()
         draw = ImageDraw.Draw(masked_img)
 
+        all_words = [w for line in lines for w in line.words]
         masked_count = 0
-        for tok in tokens:
+
+        for tok in all_words:
             if tok.is_pii:
                 padded_poly = expand_polygon(tok.polygon, padding_px)
                 draw.polygon(padded_poly, fill="black")
                 masked_count += 1
 
-        print(f"Masked {masked_count} / {len(tokens)} tokens on page.")
+        print(f"Masked {masked_count} / {len(all_words)} word tokens on page.")
         return masked_img
 
     def save_stage3_debug(self, masked_img: Image.Image, page_num: int, debug_dir: str) -> None:

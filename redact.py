@@ -54,21 +54,22 @@ def anonymize_pdf(
     for page_idx, page_img in enumerate(page_images, start=1):
         print(f"\n--- Processing Page {page_idx}/{len(page_images)} ---")
         
-        # Stage 1: OCR Extraction
-        tokens = ocr_processor.process_ocr_page(page_img, page_num=page_idx, verbose=verbose)
+        # Stage 1: 2-Level OCR Extraction (LineContainers + Child Word Tokens)
+        lines = ocr_processor.process_ocr_page(page_img, page_num=page_idx, verbose=verbose)
         if debug_dir:
-            ocr_processor.save_stage1_debug(page_img, tokens, page_num=page_idx, debug_dir=debug_dir)
+            ocr_processor.save_stage1_debug(page_img, lines, page_num=page_idx, debug_dir=debug_dir)
 
-        # Stage 2: PII Classification
-        pii_detector.detect_pii(tokens)
+        # Stage 2: Contextual Line PII Detection -> Child Word Token Flagging
+        pii_detector.detect_pii(lines)
         if verbose:
-            pii_texts = [f"{t.text} ({t.pii_reason})" for t in tokens if t.is_pii]
+            all_words = [w for l in lines for w in l.words]
+            pii_texts = [f"{w.text} ({w.pii_reason})" for w in all_words if w.is_pii]
             print(f"Page {page_idx} detected PII tokens: {pii_texts}")
         if debug_dir:
-            pii_detector.save_stage2_debug(page_img, tokens, page_num=page_idx, debug_dir=debug_dir)
+            pii_detector.save_stage2_debug(page_img, lines, page_num=page_idx, debug_dir=debug_dir)
 
-        # Stage 3: Masking & Export
-        masked_img = page_masker.mask_page(page_img, tokens, padding_px=padding_px)
+        # Stage 3: Masking & Export (Child Word Polygons)
+        masked_img = page_masker.mask_page(page_img, lines, padding_px=padding_px)
         if debug_dir:
             page_masker.save_stage3_debug(masked_img, page_num=page_idx, debug_dir=debug_dir)
 

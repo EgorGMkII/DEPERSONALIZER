@@ -1,5 +1,6 @@
 """
 OCR Extraction Module using PaddleOCR (Stage 1).
+Extracts LineContainers with child Word Tokens.
 """
 
 import os
@@ -8,7 +9,7 @@ from typing import List, Optional
 import numpy as np
 from PIL import Image, ImageDraw
 from paddleocr import PaddleOCR
-from .config import Token
+from .config import Token, LineContainer
 
 
 def get_char_weight(ch: str) -> float:
@@ -20,8 +21,13 @@ def get_char_weight(ch: str) -> float:
     return 1.0
 
 
-def split_line_into_word_tokens(poly_raw: list, text_str: str, page_num: int) -> List[Token]:
-    """Splits a line-level bounding box into word-level Tokens proportionally using character weights."""
+def split_line_into_word_tokens(
+    poly_raw: list,
+    text_str: str,
+    page_num: int,
+    line_idx: int
+) -> List[Token]:
+    """Splits a line polygon into child Word Tokens with character offset tracking."""
     text_clean = str(text_str).strip()
     if not text_clean or poly_raw is None or len(poly_raw) < 4:
         return []
@@ -40,9 +46,20 @@ def split_line_into_word_tokens(poly_raw: list, text_str: str, page_num: int) ->
 
     word_matches = list(re.finditer(r'\S+', text_str))
     if not word_matches:
-        poly_int = [[int(round(x1)), int(round(y1))], [int(round(x2)), int(round(y2))],
-                    [int(round(x3)), int(round(y3))], [int(round(x4)), int(round(y4))]]
-        return [Token(text=text_clean, polygon=poly_int, page_num=page_num)]
+        poly_int = [
+            [int(round(x1)), int(round(y1))],
+            [int(round(x2)), int(round(y2))],
+            [int(round(x3)), int(round(y3))],
+            [int(round(x4)), int(round(y4))]
+        ]
+        return [Token(
+            text=text_clean,
+            polygon=poly_int,
+            page_num=page_num,
+            line_idx=line_idx,
+            char_start=0,
+            char_end=len(text_str)
+        )]
 
     tokens = []
     for match in word_matches:
@@ -69,7 +86,14 @@ def split_line_into_word_tokens(poly_raw: list, text_str: str, page_num: int) ->
             [int(round(p3_x)), int(round(p3_y))],
             [int(round(p4_x)), int(round(p4_y))]
         ]
-        tokens.append(Token(text=word_text, polygon=w_poly, page_num=page_num))
+        tokens.append(Token(
+            text=word_text,
+            polygon=w_poly,
+            page_num=page_num,
+            line_idx=line_idx,
+            char_start=c_start,
+            char_end=c_end
+        ))
 
     return tokens
 
@@ -85,8 +109,8 @@ class OCRProcessor:
             enable_mkldnn=False
         )
 
-    def process_ocr_page(self, image: Image.Image, page_num: int, verbose: bool = False) -> List[Token]:
-        """Runs PaddleOCR on a single page image and returns straight word-level Tokens."""
+    def process_ocr_page(self, image: Image.Image, page_num: int, verbose: bool = False) -> List[LineContainer]:
+        """Runs PaddleOCR on a single page image and returns 2-level LineContainers."""
         img_np = np.array(image)
         ocr_result = self.ocr.ocr(img_np)
 
@@ -99,7 +123,7 @@ class OCRProcessor:
             print(f"Warning: OCR found no text on page {page_num}.")
             return []
 
-        tokens: List[Token] = []
+        lines: List[LineContainer] = []
 
         def get_field(obj, key):
             if isinstance(obj, dict):
@@ -127,14 +151,29 @@ class OCRProcessor:
             texts = get_field(res, "transcription")
 
         if polys is not None and texts is not None:
-            for poly_raw, text in zip(polys, texts):
-                word_tokens = split_line_into_word_tokens(poly_raw, text, page_num)
-                tokens.extend(word_tokens)
-            return tokens
+            for line_idx, (poly_raw, text) in enumerate(zip(polys, texts), start=1):
+                text_str = str(text).strip()
+                if not text_str:
+                    continue
+                try:
+                    poly_int = [[int(pt[0]), int(pt[1])] for pt in poly_raw]
+                except Exception:
+                    continue
+
+                word_tokens = split_line_into_word_tokens(poly_raw, text_str, page_num, line_idx)
+                line_obj = LineContainer(
+                    text=text_str,
+                    polygon=poly_int,
+                    page_num=page_num,
+                    line_idx=line_idx,
+                    words=word_tokens
+                )
+                lines.append(line_obj)
+            return lines
 
         # PaddleOCR 2.x nested list format
         if isinstance(res, (list, tuple)):
-            for line in res:
+            for line_idx, line in enumerate(res, start=1):
                 if not line:
                     continue
 
@@ -152,25 +191,42 @@ class OCRProcessor:
                     else:
                         text = str(text_info)
 
-                word_tokens = split_line_into_word_tokens(poly_raw, text, page_num)
-                tokens.extend(word_tokens)
+                text_str = str(text).strip()
+                if not text_str or poly_raw is None:
+                    continue
 
-        return tokens
+                try:
+                    poly_int = [[int(pt[0]), int(pt[1])] for pt in poly_raw]
+                except Exception:
+                    continue
 
-    def save_stage1_debug(self, image: Image.Image, tokens: List[Token], page_num: int, debug_dir: str) -> None:
+                word_tokens = split_line_into_word_tokens(poly_raw, text_str, page_num, line_idx)
+                line_obj = LineContainer(
+                    text=text_str,
+                    polygon=poly_int,
+                    page_num=page_num,
+                    line_idx=line_idx,
+                    words=word_tokens
+                )
+                lines.append(line_obj)
+
+        return lines
+
+    def save_stage1_debug(self, image: Image.Image, lines: List[LineContainer], page_num: int, debug_dir: str) -> None:
         """Saves Stage 1 debug artifacts (OCR polygons image and plain text dump)."""
         os.makedirs(debug_dir, exist_ok=True)
 
         # 1. Text dump
         txt_path = os.path.join(debug_dir, f"01_ocr_tokens_page_{page_num}.txt")
+        all_words = [w for line in lines for w in line.words]
         with open(txt_path, "w", encoding="utf-8") as f:
-            for idx, tok in enumerate(tokens, start=1):
-                f.write(f"[{idx:03d}] {tok.text}\n")
+            for idx, tok in enumerate(all_words, start=1):
+                f.write(f"[{idx:03d}] (Line {tok.line_idx}) {tok.text}\n")
 
         # 2. OCR Polygons image
         debug_img = image.copy()
         draw = ImageDraw.Draw(debug_img)
-        for idx, tok in enumerate(tokens, start=1):
+        for idx, tok in enumerate(all_words, start=1):
             poly_tuples = [(p[0], p[1]) for p in tok.polygon]
             draw.polygon(poly_tuples, outline="green", width=2)
             min_x = min(p[0] for p in tok.polygon)

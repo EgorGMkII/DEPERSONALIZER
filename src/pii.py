@@ -1,5 +1,7 @@
 """
 PII Detection Module using RegEx and Natasha NER (Stage 2).
+Contextual 2-Level Detection (Line-level analysis -> Child Word Token flagging).
+Includes POS protection and Header Institution Safeguards.
 """
 
 import json
@@ -15,7 +17,7 @@ from natasha import (
     NewsNERTagger,
     Doc
 )
-from .config import Token, REGEX_PATTERNS
+from .config import Token, LineContainer, REGEX_PATTERNS
 
 HOMOGLYPH_MAP = str.maketrans({
     'a': 'а', 'c': 'с', 'e': 'е', 'o': 'о', 'p': 'р', 'x': 'х', 'y': 'у',
@@ -23,20 +25,44 @@ HOMOGLYPH_MAP = str.maketrans({
     'O': 'О', 'P': 'Р', 'T': 'Т', 'X': 'Х'
 })
 
-EXCLUDED_WORDS = {
+# Words that identify official state headers/institutions
+INSTITUTION_HEADER_KEYWORDS = {
+    'приемная', 'приемкая', 'общественная', 'управление', 'отделение', 'фонд',
+    'фонда', 'правительство', 'правительства', 'администрация', 'губернатор',
+    'губернатора', 'губернау', 'департамент', 'министерство', 'социального',
+    'пенсионного', 'страхования', 'социальный'
+}
+
+# Generic geography & administrative terms that should NEVER be marked as PII
+EXCLUDED_GENERIC_WORDS = {
     'россия', 'россии', 'российская', 'российской', 'федерация', 'федерации',
     'область', 'области', 'край', 'края', 'район', 'района', 'республика', 'республики',
-    'новосибирская', 'новосибирской', 'новосибирск',
+    'новосибирская', 'новосибирской', 'новосибирск', 'нсо', 'рф', 'обл', 'обл.',
     'всоответствии', 'соответствии', 'соответствие', 'статьи', 'закона', 'порядке',
     'рассмотрения', 'обращений', 'обращение', 'граждан', 'отделение', 'фонда',
     'пенсионного', 'социального', 'страхования', 'управление', 'администрация',
-    'губернатора', 'правительства', 'приемная', 'общественная', 'действителен', 'действитепен'
+    'губернатора', 'правительства', 'приемная', 'общественная', 'действителен', 'действитепен',
+    'поступившее', 'направляем', 'просим', 'проинформировать', 'автора', 'субъект'
 }
 
 
 def normalize_text(text: str) -> str:
     """Converts OCR Latin homoglyph lookalikes back to Cyrillic."""
     return text.translate(HOMOGLYPH_MAP)
+
+
+def is_hex_hash(text: str) -> bool:
+    """Detects if a string is a long hex certificate hash (e.g. 00F551A9931C...)."""
+    clean = text.strip()
+    if len(clean) >= 20 and re.fullmatch(r'[0-9A-Fa-f]+', clean):
+        return True
+    return False
+
+
+def is_institution_header(norm_text: str) -> bool:
+    """Checks if a line contains official institution/header terms."""
+    lower = norm_text.lower()
+    return any(kw in lower for kw in INSTITUTION_HEADER_KEYWORDS)
 
 
 class PIIDetector:
@@ -47,100 +73,119 @@ class PIIDetector:
         self.morph_tagger = NewsMorphTagger(self.emb)
         self.ner_tagger = NewsNERTagger(self.emb)
 
-    def detect_pii(self, tokens: List[Token]) -> None:
-        """Detects PII in page tokens using RegEx matching and Natasha NER entity word matching."""
-        if not tokens:
+    def detect_pii(self, lines: List[LineContainer]) -> None:
+        """Detects PII on full sentence/line context and flags child Word Tokens."""
+        if not lines:
             return
 
-        # 1. Full page text normalized to Cyrillic for Natasha NER & Multi-word RegEx
-        raw_words = [tok.text for tok in tokens]
-        norm_words = [normalize_text(t) for t in raw_words]
-        full_norm_text = " ".join(norm_words)
+        for i, line in enumerate(lines):
+            if not line.words:
+                continue
 
-        # 2. Natasha NER (PER & LOC entities)
-        doc = Doc(full_norm_text)
-        doc.segment(self.segmenter)
-        doc.tag_morph(self.morph_tagger)
-        doc.tag_ner(self.ner_tagger)
+            raw_line_text = line.text
+            norm_line_text = normalize_text(raw_line_text)
+            line_is_header = is_institution_header(norm_line_text)
 
-        ner_words: Set[str] = set()
-        for span in doc.spans:
-            if span.type == 'PER':
-                words = re.findall(r'\w+', span.text.lower())
-                for w in words:
-                    if len(w) > 1 and w not in EXCLUDED_WORDS:
-                        ner_words.add(w)
-            elif span.type == 'LOC':
-                words = re.findall(r'\w+', span.text.lower())
-                for w in words:
-                    if len(w) > 1 and w not in EXCLUDED_WORDS:
-                        ner_words.add(w)
+            # Structured Postal Address detection (e.g. "Почтовый адрес: 6301 16, ул Космонавтов...")
+            if re.search(r'почтовый\s+адрес', norm_line_text, re.IGNORECASE):
+                found_colon = False
+                for w_tok in line.words:
+                    if 'адрес' in normalize_text(w_tok.text).lower() or ':' in w_tok.text:
+                        found_colon = True
+                        continue
+                    if found_colon:
+                        w_tok.is_pii = True
+                        w_tok.pii_reason = "Structured PII (Почтовый адрес)"
+                if i + 1 < len(lines) and lines[i + 1].words:
+                    next_line = lines[i + 1]
+                    if not any(k in normalize_text(next_line.text).lower() for k in ['e-mail', 'телефон', 'текст']):
+                        for w_tok in next_line.words:
+                            w_tok.is_pii = True
+                            w_tok.pii_reason = "Structured PII (Почтовый адрес)"
 
-        # 3. Multi-word RegEx matching on full text spans
-        regex_matched_spans = []
-        for pattern in REGEX_PATTERNS:
-            for match in pattern.finditer(full_norm_text):
-                regex_matched_spans.append((match.start(), match.end(), pattern.pattern[:30]))
+            # 1. Natasha NER on full line context
+            doc = Doc(norm_line_text)
+            doc.segment(self.segmenter)
+            doc.tag_morph(self.morph_tagger)
+            doc.tag_ner(self.ner_tagger)
 
-        # Calculate character start/end offset for each token in full_norm_text
-        token_char_spans = []
-        curr_pos = 0
-        for norm_w in norm_words:
-            start_pos = curr_pos
-            end_pos = curr_pos + len(norm_w)
-            token_char_spans.append((start_pos, end_pos))
-            curr_pos = end_pos + 1  # plus space
+            entity_spans = []
 
-        # 4. Evaluate each token
-        for idx, tok in enumerate(tokens):
-            norm_w = norm_words[idx]
-            tok_start, tok_end = token_char_spans[idx]
-            lower_w = norm_w.lower()
-            word_chars = set(re.findall(r'\w+', lower_w))
+            # Suppress Natasha NER triggers on official institution headers
+            if not line_is_header:
+                for span in doc.spans:
+                    if span.type in ('PER', 'LOC'):
+                        span_words = re.findall(r'\w+', span.text.lower())
+                        valid_words = [w for w in span_words if len(w) > 1 and w not in EXCLUDED_GENERIC_WORDS and not any(kw in w for kw in INSTITUTION_HEADER_KEYWORDS)]
+                        if valid_words:
+                            entity_spans.append((span.start, span.stop, f"Natasha NER ({span.type}: {', '.join(valid_words)})"))
 
-            is_match = False
-            match_reason = ""
+            # 2. RegEx patterns on full line text
+            regex_spans = []
+            for pattern in REGEX_PATTERNS:
+                for match in pattern.finditer(raw_line_text):
+                    regex_spans.append((match.start(), match.end(), f"RegEx ({pattern.pattern[:30]})"))
+                for match in pattern.finditer(norm_line_text):
+                    regex_spans.append((match.start(), match.end(), f"RegEx ({pattern.pattern[:30]})"))
 
-            # A. Check multi-word RegEx span overlap
-            for r_start, r_end, r_pat in regex_matched_spans:
-                if max(tok_start, r_start) < min(tok_end, r_end):
-                    is_match = True
-                    match_reason = f"RegEx ({r_pat})"
-                    break
+            all_matched_spans = entity_spans + regex_spans
 
-            # B. Single-token RegEx check fallback
-            if not is_match:
-                for pattern in REGEX_PATTERNS:
-                    if pattern.search(tok.text) or pattern.search(norm_w):
+            # Map POS tags to tokens for verb/preposition protection
+            pos_tags = {token.text.lower(): token.pos for token in doc.tokens}
+
+            # 3. Map line-level matched spans directly to child Word Tokens
+            for word_tok in line.words:
+                if word_tok.is_pii:
+                    continue  # Already flagged by structured rules
+
+                # Skip long hex certificate hashes
+                if is_hex_hash(word_tok.text):
+                    continue
+
+                w_start = word_tok.char_start
+                w_end = word_tok.char_end
+                clean_w = normalize_text(word_tok.text).lower().strip('.,():;')
+
+                # Never mark generic meaning or generic geography words as PII
+                if clean_w in EXCLUDED_GENERIC_WORDS or any(kw in clean_w for kw in INSTITUTION_HEADER_KEYWORDS):
+                    continue
+
+                # Protect Verbs, Prepositions, Adverbs from accidental RegEx over-matching unless part of PER
+                pos = pos_tags.get(clean_w, '')
+                if pos in ('VERB', 'ADP', 'CCONJ', 'SCONJ', 'ADV') and clean_w not in EXCLUDED_GENERIC_WORDS:
+                    # Check if token is matched by Natasha PER (Person)
+                    is_per = any('PER' in r for _, _, r in entity_spans)
+                    if not is_per:
+                        continue
+
+                is_match = False
+                match_reason = ""
+
+                for span_start, span_end, reason in all_matched_spans:
+                    if max(w_start, span_start) < min(w_end, span_end):
                         is_match = True
-                        match_reason = f"RegEx ({pattern.pattern[:30]})"
+                        match_reason = reason
                         break
 
-            # C. Natasha NER matching (excluding generic words)
-            if not is_match and word_chars:
-                filtered_chars = {w for w in word_chars if w not in EXCLUDED_WORDS}
-                matched = filtered_chars.intersection(ner_words)
-                if matched:
-                    is_match = True
-                    match_reason = f"Natasha NER ({', '.join(matched)})"
+                if is_match:
+                    word_tok.is_pii = True
+                    word_tok.pii_reason = match_reason
 
-            if is_match:
-                tok.is_pii = True
-                tok.pii_reason = match_reason
-
-    def save_stage2_debug(self, image: Image.Image, tokens: List[Token], page_num: int, debug_dir: str) -> None:
+    def save_stage2_debug(self, image: Image.Image, lines: List[LineContainer], page_num: int, debug_dir: str) -> None:
         """Saves Stage 2 debug artifacts (PII JSON dump and highlight image)."""
         os.makedirs(debug_dir, exist_ok=True)
+
+        all_words = [w for line in lines for w in line.words]
 
         # 1. Save JSON dump
         json_path = os.path.join(debug_dir, f"02_pii_tokens_page_{page_num}.json")
         with open(json_path, "w", encoding="utf-8") as f:
-            json.dump([asdict(tok) for tok in tokens], f, ensure_ascii=False, indent=2)
+            json.dump([asdict(w) for w in all_words], f, ensure_ascii=False, indent=2)
 
         # 2. Save PII highlight debug image
         pii_debug_img = image.copy()
         draw = ImageDraw.Draw(pii_debug_img)
-        for tok in tokens:
+        for tok in all_words:
             poly_tuples = [(p[0], p[1]) for p in tok.polygon]
             if tok.is_pii:
                 draw.polygon(poly_tuples, outline="red", width=3)

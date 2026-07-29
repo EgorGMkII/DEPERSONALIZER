@@ -1,8 +1,9 @@
 """
-Helper script to clean PDF annotations from all pages of 1.pdf.
+Helper script to clean PDF annotations from any target PDF.
 """
 
 import os
+import sys
 import fitz
 
 
@@ -25,4 +26,6 @@ def clean_pdf(input_path: str, output_path: str) -> None:
 
 
 if __name__ == "__main__":
-    clean_pdf("1.pdf", "clean_full.pdf")
+    inp = sys.argv[1] if len(sys.argv) > 1 else "1.pdf"
+    out = sys.argv[2] if len(sys.argv) > 2 else "clean_full.pdf"
+    clean_pdf(inp, out)

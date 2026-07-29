@@ -1,7 +1,7 @@
 """
 PII Detection Module using RegEx and Natasha NER (Stage 2).
 Contextual 2-Level Detection (Line-level analysis -> Child Word Token flagging).
-Includes POS protection and Header Institution Safeguards.
+Includes POS protection, Header Institution Safeguards, Confidence Thresholding, and Street Address detection.
 """
 
 import json
@@ -30,7 +30,7 @@ INSTITUTION_HEADER_KEYWORDS = {
     'приемная', 'приемкая', 'общественная', 'управление', 'отделение', 'фонд',
     'фонда', 'правительство', 'правительства', 'администрация', 'губернатор',
     'губернатора', 'губернау', 'департамент', 'министерство', 'социального',
-    'пенсионного', 'страхования', 'социальный'
+    'пенсионного', 'страхования', 'социальный', 'минприроды', 'прокуратуры'
 }
 
 # Generic geography & administrative terms that should NEVER be marked as PII
@@ -38,12 +38,16 @@ EXCLUDED_GENERIC_WORDS = {
     'россия', 'россии', 'российская', 'российской', 'федерация', 'федерации',
     'область', 'области', 'край', 'края', 'район', 'района', 'республика', 'республики',
     'новосибирская', 'новосибирской', 'новосибирск', 'нсо', 'рф', 'обл', 'обл.',
+    'москва', 'москвы', 'москве',
     'всоответствии', 'соответствии', 'соответствие', 'статьи', 'закона', 'порядке',
     'рассмотрения', 'обращений', 'обращение', 'граждан', 'отделение', 'фонда',
     'пенсионного', 'социального', 'страхования', 'управление', 'администрация',
     'губернатора', 'правительства', 'приемная', 'общественная', 'действителен', 'действитепен',
-    'поступившее', 'направляем', 'просим', 'проинформировать', 'автора', 'субъект'
+    'поступившее', 'направляем', 'просим', 'проинформировать', 'автора', 'субъект',
+    'оценка', 'воздействие', 'оценкавоздействия', 'экспертиза', 'заключение', 'протокол'
 }
+
+STREET_PREFIXES = {'ул.', 'y1.', 'улица', 'пер.', 'проспект', 'пр-кт'}
 
 
 def normalize_text(text: str) -> str:
@@ -85,6 +89,16 @@ class PIIDetector:
             raw_line_text = line.text
             norm_line_text = normalize_text(raw_line_text)
             line_is_header = is_institution_header(norm_line_text)
+
+            # Structured Street Address detection (token following street prefix)
+            for w_idx, w_tok in enumerate(line.words):
+                w_lower = normalize_text(w_tok.text).lower()
+                if w_lower in STREET_PREFIXES:
+                    # Mark next token in line as PII street name
+                    if w_idx + 1 < len(line.words):
+                        next_tok = line.words[w_idx + 1]
+                        next_tok.is_pii = True
+                        next_tok.pii_reason = "Structured PII (Улица)"
 
             # Structured Postal Address detection (e.g. "Почтовый адрес: 6301 16, ул Космонавтов...")
             if re.search(r'почтовый\s+адрес', norm_line_text, re.IGNORECASE):
@@ -138,6 +152,12 @@ class PIIDetector:
                 if word_tok.is_pii:
                     continue  # Already flagged by structured rules
 
+                # Low Confidence / Handwritten Text Thresholding
+                if word_tok.confidence < 0.68 and len(word_tok.text) > 1 and not is_hex_hash(word_tok.text):
+                    word_tok.is_pii = True
+                    word_tok.pii_reason = f"Low Confidence / Handwritten (conf={word_tok.confidence:.2f})"
+                    continue
+
                 # Skip long hex certificate hashes
                 if is_hex_hash(word_tok.text):
                     continue
@@ -153,7 +173,6 @@ class PIIDetector:
                 # Protect Verbs, Prepositions, Adverbs from accidental RegEx over-matching unless part of PER
                 pos = pos_tags.get(clean_w, '')
                 if pos in ('VERB', 'ADP', 'CCONJ', 'SCONJ', 'ADV') and clean_w not in EXCLUDED_GENERIC_WORDS:
-                    # Check if token is matched by Natasha PER (Person)
                     is_per = any('PER' in r for _, _, r in entity_spans)
                     if not is_per:
                         continue

@@ -15,6 +15,7 @@ class Token:
     line_idx: int = 0
     char_start: int = 0
     char_end: int = 0
+    confidence: float = 1.0
     is_pii: bool = False
     pii_reason: Optional[str] = None
 
@@ -25,6 +26,7 @@ class LineContainer:
     polygon: List[List[int]]
     page_num: int
     line_idx: int
+    confidence: float = 1.0
     words: List[Token] = field(default_factory=list)
 
 
@@ -44,10 +46,10 @@ REGEX_PATTERNS = [
     re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'),
     # Dates (including glued prefixes like "по15.052027" or "19.022026")
     re.compile(r'(?:с|по)?\b\d{2}[\.\/]?\d{2}[\.\/]?\d{4}\b|\b\d{2}[\.\/]\d{2}[\.\/]\d{2}\b'),
-    # Russian Initials + CAPITALIZED Surname (e.g., "Г.В. Козина" or "Г. В. Козина") - optional trailing brackets/dots
-    re.compile(r'\b[А-ЯЁA-Z]\.\s?[А-ЯЁA-Z]\.[\)\.\,]*\s?[А-ЯЁ][а-яё\-]+\b'),
-    # CAPITALIZED Surname + Russian Initials (e.g., "Некрасову М.В." or "(Некрасов М.В.).")
-    re.compile(r'\b[А-ЯЁ][а-яё\-]+\s+[А-ЯЁA-Z]\.\s?[А-ЯЁA-Z]\.[\)\.\,]*'),
-    # Standalone Initials (with optional trailing punctuation/brackets)
-    re.compile(r'\b[А-ЯЁA-Z]\.\s?[А-ЯЁA-Z]\.[\)\.\,]*'),
+    # Russian/Latin Initials (e.g. "Г.В. Козина", "A.A", "D.U.") - 1 or 2 dots supported
+    re.compile(r'\b[А-ЯЁA-Z]\.\s?[А-ЯЁA-Z]\.?[\)\.\,]*\s?[А-ЯЁA-Z][а-яёA-Za-z\-]+\b'),
+    # Surname + Initials (e.g., "Некрасову М.В." or "(Некрасов М.В.).")
+    re.compile(r'\b[А-ЯЁA-Z][а-яёA-Za-z\-]+\s+[А-ЯЁA-Z]\.\s?[А-ЯЁA-Z]\.?[\)\.\,]*'),
+    # Standalone Initials (1 or 2 dots, Cyrillic/Latin, e.g. "A.A", "М.В.")
+    re.compile(r'\b[А-ЯЁA-Z]\.\s?[А-ЯЁA-Z]\.?[\)\.\,]*|\b[А-ЯЁA-Z][А-ЯЁA-Z]\.[\)\.\,]*'),
 ]

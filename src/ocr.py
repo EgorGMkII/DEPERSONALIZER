@@ -1,6 +1,6 @@
 """
 OCR Extraction Module using PaddleOCR (Stage 1).
-Extracts LineContainers with child Word Tokens.
+Extracts LineContainers with child Word Tokens and confidence scores.
 """
 
 import os
@@ -25,7 +25,8 @@ def split_line_into_word_tokens(
     poly_raw: list,
     text_str: str,
     page_num: int,
-    line_idx: int
+    line_idx: int,
+    confidence: float = 1.0
 ) -> List[Token]:
     """Splits a line polygon into child Word Tokens with character offset tracking."""
     text_clean = str(text_str).strip()
@@ -58,7 +59,8 @@ def split_line_into_word_tokens(
             page_num=page_num,
             line_idx=line_idx,
             char_start=0,
-            char_end=len(text_str)
+            char_end=len(text_str),
+            confidence=confidence
         )]
 
     tokens = []
@@ -92,7 +94,8 @@ def split_line_into_word_tokens(
             page_num=page_num,
             line_idx=line_idx,
             char_start=c_start,
-            char_end=c_end
+            char_end=c_end,
+            confidence=confidence
         ))
 
     return tokens
@@ -138,20 +141,14 @@ class OCRProcessor:
             return None
 
         # PaddleX Dict / PredictResult format
-        polys = get_field(res, "dt_polys")
-        if polys is None or (hasattr(polys, "__len__") and len(polys) == 0):
-            polys = get_field(res, "rec_polys")
-        if polys is None or (hasattr(polys, "__len__") and len(polys) == 0):
-            polys = get_field(res, "points")
-
-        texts = get_field(res, "rec_texts")
-        if texts is None or (hasattr(texts, "__len__") and len(texts) == 0):
-            texts = get_field(res, "rec_text")
-        if texts is None or (hasattr(texts, "__len__") and len(texts) == 0):
-            texts = get_field(res, "transcription")
+        polys = get_field(res, "dt_polys") or get_field(res, "rec_polys") or get_field(res, "points")
+        texts = get_field(res, "rec_texts") or get_field(res, "rec_text") or get_field(res, "transcription")
+        scores = get_field(res, "rec_scores") or get_field(res, "scores")
 
         if polys is not None and texts is not None:
-            for line_idx, (poly_raw, text) in enumerate(zip(polys, texts), start=1):
+            if scores is None:
+                scores = [1.0] * len(texts)
+            for line_idx, (poly_raw, text, score) in enumerate(zip(polys, texts, scores), start=1):
                 text_str = str(text).strip()
                 if not text_str:
                     continue
@@ -160,12 +157,14 @@ class OCRProcessor:
                 except Exception:
                     continue
 
-                word_tokens = split_line_into_word_tokens(poly_raw, text_str, page_num, line_idx)
+                conf_val = float(score) if score is not None else 1.0
+                word_tokens = split_line_into_word_tokens(poly_raw, text_str, page_num, line_idx, confidence=conf_val)
                 line_obj = LineContainer(
                     text=text_str,
                     polygon=poly_int,
                     page_num=page_num,
                     line_idx=line_idx,
+                    confidence=conf_val,
                     words=word_tokens
                 )
                 lines.append(line_obj)
@@ -179,17 +178,21 @@ class OCRProcessor:
 
                 poly_raw = None
                 text = ""
+                score = 1.0
 
                 if isinstance(line, dict):
                     poly_raw = line.get("points") if line.get("points") is not None else line.get("dt_polys")
                     text = line.get("transcription") or line.get("rec_text") or line.get("text", "")
+                    score = float(line.get("score") or line.get("confidence") or 1.0)
                 elif isinstance(line, (list, tuple)) and len(line) >= 2:
                     poly_raw = line[0]
                     text_info = line[1]
                     if isinstance(text_info, (list, tuple)):
                         text = text_info[0] if len(text_info) > 0 else ""
+                        score = float(text_info[1]) if len(text_info) > 1 else 1.0
                     else:
                         text = str(text_info)
+                        score = 1.0
 
                 text_str = str(text).strip()
                 if not text_str or poly_raw is None:
@@ -200,38 +203,38 @@ class OCRProcessor:
                 except Exception:
                     continue
 
-                word_tokens = split_line_into_word_tokens(poly_raw, text_str, page_num, line_idx)
+                word_tokens = split_line_into_word_tokens(poly_raw, text_str, page_num, line_idx, confidence=score)
                 line_obj = LineContainer(
                     text=text_str,
                     polygon=poly_int,
                     page_num=page_num,
                     line_idx=line_idx,
+                    confidence=score,
                     words=word_tokens
                 )
                 lines.append(line_obj)
 
+        # Save Stage 1 debug artifacts
+        self.save_stage1_debug(image, lines, page_num, debug_dir="debug_output")
         return lines
 
     def save_stage1_debug(self, image: Image.Image, lines: List[LineContainer], page_num: int, debug_dir: str) -> None:
-        """Saves Stage 1 debug artifacts (OCR polygons image and plain text dump)."""
+        """Saves Stage 1 OCR debug artifacts (raw text file and overlay image)."""
         os.makedirs(debug_dir, exist_ok=True)
 
-        # 1. Text dump
         txt_path = os.path.join(debug_dir, f"01_ocr_tokens_page_{page_num}.txt")
-        all_words = [w for line in lines for w in line.words]
         with open(txt_path, "w", encoding="utf-8") as f:
-            for idx, tok in enumerate(all_words, start=1):
-                f.write(f"[{idx:03d}] (Line {tok.line_idx}) {tok.text}\n")
+            for line in lines:
+                for tok in line.words:
+                    f.write(f"[{tok.line_idx:03d}] (Line {tok.line_idx}) {tok.text} (conf={tok.confidence:.2f})\n")
 
-        # 2. OCR Polygons image
         debug_img = image.copy()
         draw = ImageDraw.Draw(debug_img)
-        for idx, tok in enumerate(all_words, start=1):
-            poly_tuples = [(p[0], p[1]) for p in tok.polygon]
-            draw.polygon(poly_tuples, outline="green", width=2)
-            min_x = min(p[0] for p in tok.polygon)
-            min_y = min(p[1] for p in tok.polygon)
-            draw.text((min_x, max(0, min_y - 10)), str(idx), fill="blue")
+        for line in lines:
+            poly_tuples = [(p[0], p[1]) for p in line.polygon]
+            draw.polygon(poly_tuples, outline="blue", width=2)
+            for tok in line.words:
+                w_tuples = [(p[0], p[1]) for p in tok.polygon]
+                draw.polygon(w_tuples, outline="green", width=1)
 
         debug_img.save(os.path.join(debug_dir, f"01_ocr_raw_page_{page_num}.png"))
-        print(f"Saved Stage 1 OCR debug artifacts in '{debug_dir}/'.")

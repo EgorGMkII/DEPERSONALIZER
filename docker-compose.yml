@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  depersonalizer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: depersonalizer-service
+    ports:
+      - "8000:8000"
+    volumes:
+      # Persist anonymization jobs and outputs
+      - ./jobs_data:/app/jobs_data
+      # Cache downloaded PaddleOCR models to prevent redownloading
+      - paddle_models_cache:/root/.paddlex
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+volumes:
+  paddle_models_cache:

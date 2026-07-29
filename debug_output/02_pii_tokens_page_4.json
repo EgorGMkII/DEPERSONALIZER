@@ -1,0 +1,9942 @@
+[
+  {
+    "text": "='",
+    "polygon": [
+      [
+        56,
+        41
+      ],
+      [
+        111,
+        39
+      ],
+      [
+        114,
+        110
+      ],
+      [
+        59,
+        112
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 1,
+    "char_start": 0,
+    "char_end": 2,
+    "confidence": 0.559451162815094,
+    "is_pii": true,
+    "pii_reason": "Low Confidence / Handwritten (conf=0.56)"
+  },
+  {
+    "text": "20m",
+    "polygon": [
+      [
+        128,
+        38
+      ],
+      [
+        256,
+        32
+      ],
+      [
+        259,
+        103
+      ],
+      [
+        131,
+        109
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 1,
+    "char_start": 3,
+    "char_end": 6,
+    "confidence": 0.559451162815094,
+    "is_pii": true,
+    "pii_reason": "Low Confidence / Handwritten (conf=0.56)"
+  },
+  {
+    "text": "Mypuaer",
+    "polygon": [
+      [
+        273,
+        32
+      ],
+      [
+        552,
+        19
+      ],
+      [
+        556,
+        90
+      ],
+      [
+        276,
+        102
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 1,
+    "char_start": 7,
+    "char_end": 14,
+    "confidence": 0.559451162815094,
+    "is_pii": true,
+    "pii_reason": "Low Confidence / Handwritten (conf=0.56)"
+  },
+  {
+    "text": "A.A",
+    "polygon": [
+      [
+        570,
+        18
+      ],
+      [
+        663,
+        14
+      ],
+      [
+        666,
+        85
+      ],
+      [
+        573,
+        90
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 1,
+    "char_start": 15,
+    "char_end": 18,
+    "confidence": 0.559451162815094,
+    "is_pii": true,
+    "pii_reason": "Low Confidence / Handwritten (conf=0.56)"
+  },
+  {
+    "text": "o",
+    "polygon": [
+      [
+        680,
+        14
+      ],
+      [
+        718,
+        12
+      ],
+      [
+        721,
+        83
+      ],
+      [
+        683,
+        85
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 1,
+    "char_start": 19,
+    "char_end": 20,
+    "confidence": 0.559451162815094,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "г.",
+    "polygon": [
+      [
+        71,
+        105
+      ],
+      [
+        121,
+        103
+      ],
+      [
+        123,
+        154
+      ],
+      [
+        73,
+        156
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 2,
+    "char_start": 0,
+    "char_end": 2,
+    "confidence": 0.6878308057785034,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Hoboeuбиpck.",
+    "polygon": [
+      [
+        137,
+        103
+      ],
+      [
+        532,
+        90
+      ],
+      [
+        534,
+        141
+      ],
+      [
+        139,
+        154
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 2,
+    "char_start": 3,
+    "char_end": 15,
+    "confidence": 0.6878308057785034,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "63003д",
+    "polygon": [
+      [
+        547,
+        90
+      ],
+      [
+        754,
+        83
+      ],
+      [
+        756,
+        134
+      ],
+      [
+        549,
+        141
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 2,
+    "char_start": 16,
+    "char_end": 22,
+    "confidence": 0.6878308057785034,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Президенту",
+    "polygon": [
+      [
+        782,
+        131
+      ],
+      [
+        929,
+        130
+      ],
+      [
+        930,
+        165
+      ],
+      [
+        783,
+        167
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 3,
+    "char_start": 0,
+    "char_end": 10,
+    "confidence": 0.9825104475021362,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Российской",
+    "polygon": [
+      [
+        936,
+        130
+      ],
+      [
+        1083,
+        128
+      ],
+      [
+        1084,
+        164
+      ],
+      [
+        937,
+        165
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 3,
+    "char_start": 11,
+    "char_end": 21,
+    "confidence": 0.9825104475021362,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Федерации",
+    "polygon": [
+      [
+        1090,
+        128
+      ],
+      [
+        1222,
+        127
+      ],
+      [
+        1223,
+        162
+      ],
+      [
+        1091,
+        164
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 3,
+    "char_start": 22,
+    "char_end": 31,
+    "confidence": 0.9825104475021362,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "y1.",
+    "polygon": [
+      [
+        74,
+        151
+      ],
+      [
+        141,
+        148
+      ],
+      [
+        143,
+        209
+      ],
+      [
+        76,
+        212
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 4,
+    "char_start": 0,
+    "char_end": 3,
+    "confidence": 0.4790831506252289,
+    "is_pii": true,
+    "pii_reason": "Low Confidence / Handwritten (conf=0.48)"
+  },
+  {
+    "text": "Зесенообенека,",
+    "polygon": [
+      [
+        157,
+        148
+      ],
+      [
+        634,
+        130
+      ],
+      [
+        636,
+        191
+      ],
+      [
+        159,
+        209
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 4,
+    "char_start": 4,
+    "char_end": 18,
+    "confidence": 0.4790831506252289,
+    "is_pii": true,
+    "pii_reason": "Low Confidence / Handwritten (conf=0.48)"
+  },
+  {
+    "text": "д",
+    "polygon": [
+      [
+        650,
+        130
+      ],
+      [
+        685,
+        128
+      ],
+      [
+        687,
+        189
+      ],
+      [
+        652,
+        191
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 4,
+    "char_start": 19,
+    "char_end": 20,
+    "confidence": 0.4790831506252289,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "87",
+    "polygon": [
+      [
+        701,
+        128
+      ],
+      [
+        772,
+        125
+      ],
+      [
+        774,
+        186
+      ],
+      [
+        703,
+        189
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 4,
+    "char_start": 21,
+    "char_end": 23,
+    "confidence": 0.4790831506252289,
+    "is_pii": true,
+    "pii_reason": "Low Confidence / Handwritten (conf=0.48)"
+  },
+  {
+    "text": "Путину",
+    "polygon": [
+      [
+        785,
+        165
+      ],
+      [
+        876,
+        165
+      ],
+      [
+        876,
+        195
+      ],
+      [
+        785,
+        196
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 5,
+    "char_start": 0,
+    "char_end": 6,
+    "confidence": 0.9717168211936951,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Владимиру",
+    "polygon": [
+      [
+        883,
+        165
+      ],
+      [
+        1020,
+        164
+      ],
+      [
+        1020,
+        194
+      ],
+      [
+        883,
+        195
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 5,
+    "char_start": 7,
+    "char_end": 16,
+    "confidence": 0.9717168211936951,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (PER: владимиру, владимировичу)"
+  },
+  {
+    "text": "Владимировичу",
+    "polygon": [
+      [
+        1027,
+        164
+      ],
+      [
+        1225,
+        163
+      ],
+      [
+        1225,
+        193
+      ],
+      [
+        1027,
+        194
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 5,
+    "char_start": 17,
+    "char_end": 30,
+    "confidence": 0.9717168211936951,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (PER: владимиру, владимировичу)"
+  },
+  {
+    "text": "S-953-764-S6-88.",
+    "polygon": [
+      [
+        138,
+        205
+      ],
+      [
+        467,
+        188
+      ],
+      [
+        470,
+        230
+      ],
+      [
+        140,
+        247
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 6,
+    "char_start": 0,
+    "char_end": 16,
+    "confidence": 0.8652510643005371,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "От",
+    "polygon": [
+      [
+        785,
+        198
+      ],
+      [
+        814,
+        198
+      ],
+      [
+        814,
+        229
+      ],
+      [
+        785,
+        229
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 7,
+    "char_start": 0,
+    "char_end": 2,
+    "confidence": 0.9789048433303833,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "жителей",
+    "polygon": [
+      [
+        821,
+        198
+      ],
+      [
+        923,
+        197
+      ],
+      [
+        923,
+        228
+      ],
+      [
+        821,
+        229
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 7,
+    "char_start": 3,
+    "char_end": 10,
+    "confidence": 0.9789048433303833,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Октябрьского",
+    "polygon": [
+      [
+        930,
+        197
+      ],
+      [
+        1106,
+        196
+      ],
+      [
+        1106,
+        228
+      ],
+      [
+        930,
+        228
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 7,
+    "char_start": 11,
+    "char_end": 23,
+    "confidence": 0.9789048433303833,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: октябрьского)"
+  },
+  {
+    "text": "и",
+    "polygon": [
+      [
+        1112,
+        196
+      ],
+      [
+        1127,
+        196
+      ],
+      [
+        1127,
+        228
+      ],
+      [
+        1112,
+        228
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 7,
+    "char_start": 24,
+    "char_end": 25,
+    "confidence": 0.9789048433303833,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Дзержинского",
+    "polygon": [
+      [
+        1133,
+        196
+      ],
+      [
+        1309,
+        195
+      ],
+      [
+        1309,
+        227
+      ],
+      [
+        1133,
+        228
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 7,
+    "char_start": 26,
+    "char_end": 38,
+    "confidence": 0.9789048433303833,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: дзержинского)"
+  },
+  {
+    "text": "районов",
+    "polygon": [
+      [
+        784,
+        230
+      ],
+      [
+        887,
+        229
+      ],
+      [
+        887,
+        260
+      ],
+      [
+        784,
+        261
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 8,
+    "char_start": 0,
+    "char_end": 7,
+    "confidence": 0.9591811895370483,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "г.",
+    "polygon": [
+      [
+        893,
+        229
+      ],
+      [
+        914,
+        229
+      ],
+      [
+        914,
+        260
+      ],
+      [
+        893,
+        260
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 8,
+    "char_start": 8,
+    "char_end": 10,
+    "confidence": 0.9591811895370483,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Новосибирска",
+    "polygon": [
+      [
+        921,
+        229
+      ],
+      [
+        1097,
+        228
+      ],
+      [
+        1097,
+        259
+      ],
+      [
+        921,
+        260
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 8,
+    "char_start": 11,
+    "char_end": 23,
+    "confidence": 0.9591811895370483,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: новосибирска)"
+  },
+  {
+    "text": "28.052b",
+    "polygon": [
+      [
+        394,
+        242
+      ],
+      [
+        609,
+        231
+      ],
+      [
+        612,
+        286
+      ],
+      [
+        397,
+        298
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 9,
+    "char_start": 0,
+    "char_end": 7,
+    "confidence": 0.5881690979003906,
+    "is_pii": true,
+    "pii_reason": "Low Confidence / Handwritten (conf=0.59)"
+  },
+  {
+    "text": "Chumak.vep@gmail.com",
+    "polygon": [
+      [
+        787,
+        262
+      ],
+      [
+        1084,
+        262
+      ],
+      [
+        1084,
+        293
+      ],
+      [
+        787,
+        293
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 10,
+    "char_start": 0,
+    "char_end": 20,
+    "confidence": 0.9834073781967163,
+    "is_pii": true,
+    "pii_reason": "RegEx (\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9)"
+  },
+  {
+    "text": "+79139029779",
+    "polygon": [
+      [
+        786,
+        293
+      ],
+      [
+        966,
+        293
+      ],
+      [
+        966,
+        324
+      ],
+      [
+        786,
+        324
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 11,
+    "char_start": 0,
+    "char_end": 12,
+    "confidence": 0.9995811581611633,
+    "is_pii": true,
+    "pii_reason": "RegEx ((?:\\+7|8)[\\s\\-\\(]*\\d{3}[\\s\\-\\))"
+  },
+  {
+    "text": "Тема:",
+    "polygon": [
+      [
+        214,
+        367
+      ],
+      [
+        278,
+        367
+      ],
+      [
+        279,
+        397
+      ],
+      [
+        215,
+        397
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 12,
+    "char_start": 0,
+    "char_end": 5,
+    "confidence": 0.9784539341926575,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "о",
+    "polygon": [
+      [
+        285,
+        367
+      ],
+      [
+        299,
+        367
+      ],
+      [
+        300,
+        397
+      ],
+      [
+        286,
+        397
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 12,
+    "char_start": 6,
+    "char_end": 7,
+    "confidence": 0.9784539341926575,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "нарушениях",
+    "polygon": [
+      [
+        306,
+        367
+      ],
+      [
+        450,
+        366
+      ],
+      [
+        451,
+        396
+      ],
+      [
+        307,
+        397
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 12,
+    "char_start": 8,
+    "char_end": 18,
+    "confidence": 0.9784539341926575,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "в",
+    "polygon": [
+      [
+        457,
+        366
+      ],
+      [
+        471,
+        366
+      ],
+      [
+        472,
+        396
+      ],
+      [
+        458,
+        396
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 12,
+    "char_start": 19,
+    "char_end": 20,
+    "confidence": 0.9784539341926575,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "части",
+    "polygon": [
+      [
+        478,
+        366
+      ],
+      [
+        550,
+        366
+      ],
+      [
+        551,
+        396
+      ],
+      [
+        479,
+        396
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 12,
+    "char_start": 21,
+    "char_end": 26,
+    "confidence": 0.9784539341926575,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "обеспечения",
+    "polygon": [
+      [
+        557,
+        366
+      ],
+      [
+        716,
+        365
+      ],
+      [
+        717,
+        395
+      ],
+      [
+        558,
+        396
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 12,
+    "char_start": 27,
+    "char_end": 38,
+    "confidence": 0.9784539341926575,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "прав",
+    "polygon": [
+      [
+        722,
+        365
+      ],
+      [
+        780,
+        365
+      ],
+      [
+        781,
+        395
+      ],
+      [
+        723,
+        395
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 12,
+    "char_start": 39,
+    "char_end": 43,
+    "confidence": 0.9784539341926575,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "на",
+    "polygon": [
+      [
+        787,
+        365
+      ],
+      [
+        815,
+        364
+      ],
+      [
+        816,
+        394
+      ],
+      [
+        788,
+        395
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 12,
+    "char_start": 44,
+    "char_end": 46,
+    "confidence": 0.9784539341926575,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "благополучную",
+    "polygon": [
+      [
+        822,
+        364
+      ],
+      [
+        1010,
+        364
+      ],
+      [
+        1011,
+        394
+      ],
+      [
+        823,
+        394
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 12,
+    "char_start": 47,
+    "char_end": 60,
+    "confidence": 0.9784539341926575,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "санитарно-",
+    "polygon": [
+      [
+        1016,
+        364
+      ],
+      [
+        1153,
+        363
+      ],
+      [
+        1154,
+        393
+      ],
+      [
+        1017,
+        394
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 12,
+    "char_start": 61,
+    "char_end": 71,
+    "confidence": 0.9784539341926575,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "эпидемиологическую",
+    "polygon": [
+      [
+        214,
+        405
+      ],
+      [
+        475,
+        402
+      ],
+      [
+        475,
+        433
+      ],
+      [
+        215,
+        436
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 13,
+    "char_start": 0,
+    "char_end": 18,
+    "confidence": 0.9664766192436218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "обстановку",
+    "polygon": [
+      [
+        481,
+        402
+      ],
+      [
+        626,
+        401
+      ],
+      [
+        626,
+        432
+      ],
+      [
+        482,
+        433
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 13,
+    "char_start": 19,
+    "char_end": 29,
+    "confidence": 0.9664766192436218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "в",
+    "polygon": [
+      [
+        632,
+        401
+      ],
+      [
+        647,
+        401
+      ],
+      [
+        647,
+        432
+      ],
+      [
+        633,
+        432
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 13,
+    "char_start": 30,
+    "char_end": 31,
+    "confidence": 0.9664766192436218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "месте",
+    "polygon": [
+      [
+        653,
+        401
+      ],
+      [
+        726,
+        400
+      ],
+      [
+        726,
+        431
+      ],
+      [
+        654,
+        432
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 13,
+    "char_start": 32,
+    "char_end": 37,
+    "confidence": 0.9664766192436218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "проживания",
+    "polygon": [
+      [
+        732,
+        400
+      ],
+      [
+        877,
+        398
+      ],
+      [
+        877,
+        429
+      ],
+      [
+        733,
+        431
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 13,
+    "char_start": 38,
+    "char_end": 48,
+    "confidence": 0.9664766192436218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "при",
+    "polygon": [
+      [
+        883,
+        398
+      ],
+      [
+        927,
+        398
+      ],
+      [
+        927,
+        429
+      ],
+      [
+        884,
+        429
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 13,
+    "char_start": 49,
+    "char_end": 52,
+    "confidence": 0.9664766192436218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "эксплуатации",
+    "polygon": [
+      [
+        933,
+        398
+      ],
+      [
+        1107,
+        396
+      ],
+      [
+        1107,
+        427
+      ],
+      [
+        934,
+        429
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 13,
+    "char_start": 53,
+    "char_end": 65,
+    "confidence": 0.9664766192436218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "объекта",
+    "polygon": [
+      [
+        1114,
+        396
+      ],
+      [
+        1215,
+        395
+      ],
+      [
+        1215,
+        426
+      ],
+      [
+        1114,
+        427
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 13,
+    "char_start": 66,
+    "char_end": 73,
+    "confidence": 0.9664766192436218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "I",
+    "polygon": [
+      [
+        1221,
+        395
+      ],
+      [
+        1228,
+        395
+      ],
+      [
+        1228,
+        426
+      ],
+      [
+        1221,
+        426
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 13,
+    "char_start": 74,
+    "char_end": 75,
+    "confidence": 0.9664766192436218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "категории",
+    "polygon": [
+      [
+        212,
+        440
+      ],
+      [
+        345,
+        439
+      ],
+      [
+        346,
+        472
+      ],
+      [
+        213,
+        473
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 14,
+    "char_start": 0,
+    "char_end": 9,
+    "confidence": 0.9435372948646545,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "негативного",
+    "polygon": [
+      [
+        351,
+        439
+      ],
+      [
+        514,
+        437
+      ],
+      [
+        515,
+        470
+      ],
+      [
+        352,
+        472
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 14,
+    "char_start": 10,
+    "char_end": 21,
+    "confidence": 0.9435372948646545,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "воздействия",
+    "polygon": [
+      [
+        520,
+        437
+      ],
+      [
+        683,
+        435
+      ],
+      [
+        684,
+        468
+      ],
+      [
+        521,
+        470
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 14,
+    "char_start": 22,
+    "char_end": 33,
+    "confidence": 0.9435372948646545,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "на",
+    "polygon": [
+      [
+        689,
+        435
+      ],
+      [
+        719,
+        435
+      ],
+      [
+        720,
+        468
+      ],
+      [
+        690,
+        468
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 14,
+    "char_start": 34,
+    "char_end": 36,
+    "confidence": 0.9435372948646545,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "окружающую",
+    "polygon": [
+      [
+        725,
+        435
+      ],
+      [
+        873,
+        434
+      ],
+      [
+        874,
+        467
+      ],
+      [
+        726,
+        468
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 14,
+    "char_start": 37,
+    "char_end": 47,
+    "confidence": 0.9435372948646545,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "среду",
+    "polygon": [
+      [
+        879,
+        434
+      ],
+      [
+        953,
+        433
+      ],
+      [
+        954,
+        466
+      ],
+      [
+        880,
+        467
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 14,
+    "char_start": 48,
+    "char_end": 53,
+    "confidence": 0.9435372948646545,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "-",
+    "polygon": [
+      [
+        960,
+        433
+      ],
+      [
+        966,
+        433
+      ],
+      [
+        967,
+        466
+      ],
+      [
+        961,
+        466
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 14,
+    "char_start": 54,
+    "char_end": 55,
+    "confidence": 0.9435372948646545,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "полигона",
+    "polygon": [
+      [
+        973,
+        433
+      ],
+      [
+        1091,
+        431
+      ],
+      [
+        1092,
+        464
+      ],
+      [
+        974,
+        466
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 14,
+    "char_start": 56,
+    "char_end": 64,
+    "confidence": 0.9435372948646545,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Тбо",
+    "polygon": [
+      [
+        1098,
+        431
+      ],
+      [
+        1142,
+        431
+      ],
+      [
+        1143,
+        464
+      ],
+      [
+        1099,
+        464
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 14,
+    "char_start": 65,
+    "char_end": 68,
+    "confidence": 0.9435372948646545,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: тбо)"
+  },
+  {
+    "text": "ревительства",
+    "polygon": [
+      [
+        988,
+        455
+      ],
+      [
+        1081,
+        458
+      ],
+      [
+        1080,
+        478
+      ],
+      [
+        988,
+        475
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 15,
+    "char_start": 0,
+    "char_end": 12,
+    "confidence": 0.7281506061553955,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Новесибирской",
+    "polygon": [
+      [
+        1084,
+        458
+      ],
+      [
+        1184,
+        461
+      ],
+      [
+        1184,
+        481
+      ],
+      [
+        1084,
+        478
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 15,
+    "char_start": 13,
+    "char_end": 26,
+    "confidence": 0.7281506061553955,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (PER: новесибирской)"
+  },
+  {
+    "text": "ббласти",
+    "polygon": [
+      [
+        1188,
+        461
+      ],
+      [
+        1242,
+        463
+      ],
+      [
+        1241,
+        483
+      ],
+      [
+        1187,
+        481
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 15,
+    "char_start": 27,
+    "char_end": 34,
+    "confidence": 0.7281506061553955,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "«Гусинобродский»",
+    "polygon": [
+      [
+        217,
+        474
+      ],
+      [
+        454,
+        474
+      ],
+      [
+        454,
+        504
+      ],
+      [
+        217,
+        504
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 16,
+    "char_start": 0,
+    "char_end": 16,
+    "confidence": 0.9818378686904907,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Управление",
+    "polygon": [
+      [
+        923,
+        470
+      ],
+      [
+        1013,
+        473
+      ],
+      [
+        1012,
+        497
+      ],
+      [
+        922,
+        494
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 17,
+    "char_start": 0,
+    "char_end": 10,
+    "confidence": 0.8423534631729126,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "по",
+    "polygon": [
+      [
+        1017,
+        473
+      ],
+      [
+        1035,
+        473
+      ],
+      [
+        1034,
+        498
+      ],
+      [
+        1016,
+        497
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 17,
+    "char_start": 11,
+    "char_end": 13,
+    "confidence": 0.8423534631729126,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "работе",
+    "polygon": [
+      [
+        1039,
+        474
+      ],
+      [
+        1093,
+        475
+      ],
+      [
+        1092,
+        500
+      ],
+      [
+        1038,
+        498
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 17,
+    "char_start": 14,
+    "char_end": 20,
+    "confidence": 0.8423534631729126,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "с",
+    "polygon": [
+      [
+        1098,
+        475
+      ],
+      [
+        1107,
+        476
+      ],
+      [
+        1106,
+        500
+      ],
+      [
+        1097,
+        500
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 17,
+    "char_start": 21,
+    "char_end": 22,
+    "confidence": 0.8423534631729126,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "обрещениями",
+    "polygon": [
+      [
+        1111,
+        476
+      ],
+      [
+        1210,
+        479
+      ],
+      [
+        1209,
+        504
+      ],
+      [
+        1110,
+        500
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 17,
+    "char_start": 23,
+    "char_end": 34,
+    "confidence": 0.8423534631729126,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "граждан",
+    "polygon": [
+      [
+        1214,
+        479
+      ],
+      [
+        1277,
+        481
+      ],
+      [
+        1276,
+        506
+      ],
+      [
+        1213,
+        504
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 17,
+    "char_start": 35,
+    "char_end": 42,
+    "confidence": 0.8423534631729126,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "общестаеннас",
+    "polygon": [
+      [
+        930,
+        490
+      ],
+      [
+        1051,
+        495
+      ],
+      [
+        1050,
+        514
+      ],
+      [
+        929,
+        508
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 18,
+    "char_start": 0,
+    "char_end": 12,
+    "confidence": 0.7841338515281677,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "ОБРАЩЕНИЕ",
+    "polygon": [
+      [
+        678,
+        507
+      ],
+      [
+        872,
+        507
+      ],
+      [
+        872,
+        535
+      ],
+      [
+        678,
+        535
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 19,
+    "char_start": 0,
+    "char_end": 9,
+    "confidence": 0.9958874583244324,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "No",
+    "polygon": [
+      [
+        919,
+        513
+      ],
+      [
+        951,
+        513
+      ],
+      [
+        951,
+        538
+      ],
+      [
+        919,
+        538
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 20,
+    "char_start": 0,
+    "char_end": 2,
+    "confidence": 0.4895888864994049,
+    "is_pii": true,
+    "pii_reason": "Low Confidence / Handwritten (conf=0.49)"
+  },
+  {
+    "text": "У4-339071",
+    "polygon": [
+      [
+        101,
+        533
+      ],
+      [
+        272,
+        525
+      ],
+      [
+        274,
+        567
+      ],
+      [
+        103,
+        575
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 21,
+    "char_start": 0,
+    "char_end": 9,
+    "confidence": 0.9042122960090637,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "»",
+    "polygon": [
+      [
+        998,
+        553
+      ],
+      [
+        1012,
+        553
+      ],
+      [
+        1012,
+        568
+      ],
+      [
+        998,
+        568
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 22,
+    "char_start": 0,
+    "char_end": 1,
+    "confidence": 0.9778822064399719,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Уважаемый,Владимир",
+    "polygon": [
+      [
+        519,
+        582
+      ],
+      [
+        813,
+        582
+      ],
+      [
+        813,
+        610
+      ],
+      [
+        519,
+        610
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 23,
+    "char_start": 0,
+    "char_end": 18,
+    "confidence": 0.9776110649108887,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (PER: владимир, владимирович)"
+  },
+  {
+    "text": "Владимирович,",
+    "polygon": [
+      [
+        821,
+        582
+      ],
+      [
+        1031,
+        582
+      ],
+      [
+        1031,
+        610
+      ],
+      [
+        821,
+        610
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 23,
+    "char_start": 19,
+    "char_end": 32,
+    "confidence": 0.9776110649108887,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (PER: владимир, владимирович)"
+  },
+  {
+    "text": "Обращаются",
+    "polygon": [
+      [
+        301,
+        653
+      ],
+      [
+        468,
+        653
+      ],
+      [
+        468,
+        684
+      ],
+      [
+        301,
+        684
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 24,
+    "char_start": 0,
+    "char_end": 10,
+    "confidence": 0.9831476807594299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "к",
+    "polygon": [
+      [
+        476,
+        653
+      ],
+      [
+        493,
+        653
+      ],
+      [
+        493,
+        684
+      ],
+      [
+        476,
+        684
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 24,
+    "char_start": 11,
+    "char_end": 12,
+    "confidence": 0.9831476807594299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Вам",
+    "polygon": [
+      [
+        500,
+        653
+      ],
+      [
+        550,
+        653
+      ],
+      [
+        550,
+        684
+      ],
+      [
+        500,
+        684
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 24,
+    "char_start": 13,
+    "char_end": 16,
+    "confidence": 0.9831476807594299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "жители",
+    "polygon": [
+      [
+        558,
+        653
+      ],
+      [
+        658,
+        652
+      ],
+      [
+        658,
+        683
+      ],
+      [
+        558,
+        684
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 24,
+    "char_start": 17,
+    "char_end": 23,
+    "confidence": 0.9831476807594299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Октябрьского",
+    "polygon": [
+      [
+        666,
+        652
+      ],
+      [
+        867,
+        652
+      ],
+      [
+        867,
+        683
+      ],
+      [
+        666,
+        683
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 24,
+    "char_start": 24,
+    "char_end": 36,
+    "confidence": 0.9831476807594299,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: октябрьского)"
+  },
+  {
+    "text": "и",
+    "polygon": [
+      [
+        874,
+        652
+      ],
+      [
+        891,
+        652
+      ],
+      [
+        891,
+        683
+      ],
+      [
+        874,
+        683
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 24,
+    "char_start": 37,
+    "char_end": 38,
+    "confidence": 0.9831476807594299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Дзержинского",
+    "polygon": [
+      [
+        899,
+        652
+      ],
+      [
+        1099,
+        651
+      ],
+      [
+        1099,
+        682
+      ],
+      [
+        899,
+        683
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 24,
+    "char_start": 39,
+    "char_end": 51,
+    "confidence": 0.9831476807594299,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: дзержинского, районов)"
+  },
+  {
+    "text": "районов",
+    "polygon": [
+      [
+        1107,
+        651
+      ],
+      [
+        1224,
+        651
+      ],
+      [
+        1224,
+        682
+      ],
+      [
+        1107,
+        682
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 24,
+    "char_start": 52,
+    "char_end": 59,
+    "confidence": 0.9831476807594299,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: дзержинского, районов)"
+  },
+  {
+    "text": "города",
+    "polygon": [
+      [
+        1232,
+        651
+      ],
+      [
+        1332,
+        651
+      ],
+      [
+        1332,
+        682
+      ],
+      [
+        1232,
+        682
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 24,
+    "char_start": 60,
+    "char_end": 66,
+    "confidence": 0.9831476807594299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Новосибирска,",
+    "polygon": [
+      [
+        218,
+        690
+      ],
+      [
+        426,
+        690
+      ],
+      [
+        426,
+        721
+      ],
+      [
+        218,
+        721
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 25,
+    "char_start": 0,
+    "char_end": 13,
+    "confidence": 0.9850397706031799,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: новосибирска)"
+  },
+  {
+    "text": "проживающих",
+    "polygon": [
+      [
+        433,
+        690
+      ],
+      [
+        617,
+        689
+      ],
+      [
+        617,
+        720
+      ],
+      [
+        433,
+        721
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 25,
+    "char_start": 14,
+    "char_end": 25,
+    "confidence": 0.9850397706031799,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "в",
+    "polygon": [
+      [
+        624,
+        689
+      ],
+      [
+        641,
+        689
+      ],
+      [
+        641,
+        720
+      ],
+      [
+        624,
+        720
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 25,
+    "char_start": 26,
+    "char_end": 27,
+    "confidence": 0.9850397706031799,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "непосредственной",
+    "polygon": [
+      [
+        648,
+        689
+      ],
+      [
+        915,
+        689
+      ],
+      [
+        915,
+        720
+      ],
+      [
+        648,
+        720
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 25,
+    "char_start": 28,
+    "char_end": 44,
+    "confidence": 0.9850397706031799,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "близости",
+    "polygon": [
+      [
+        938,
+        690
+      ],
+      [
+        1056,
+        690
+      ],
+      [
+        1056,
+        715
+      ],
+      [
+        938,
+        715
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 26,
+    "char_start": 0,
+    "char_end": 8,
+    "confidence": 0.9641634821891785,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "к",
+    "polygon": [
+      [
+        1081,
+        692
+      ],
+      [
+        1104,
+        692
+      ],
+      [
+        1104,
+        715
+      ],
+      [
+        1081,
+        715
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 27,
+    "char_start": 0,
+    "char_end": 1,
+    "confidence": 0.4401412010192871,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "полигону",
+    "polygon": [
+      [
+        1122,
+        687
+      ],
+      [
+        1270,
+        683
+      ],
+      [
+        1270,
+        718
+      ],
+      [
+        1123,
+        721
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 28,
+    "char_start": 0,
+    "char_end": 8,
+    "confidence": 0.9480040669441223,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "ТБО",
+    "polygon": [
+      [
+        1278,
+        683
+      ],
+      [
+        1334,
+        681
+      ],
+      [
+        1334,
+        716
+      ],
+      [
+        1279,
+        717
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 28,
+    "char_start": 9,
+    "char_end": 12,
+    "confidence": 0.9480040669441223,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "«Гусинобродский».",
+    "polygon": [
+      [
+        219,
+        725
+      ],
+      [
+        464,
+        724
+      ],
+      [
+        464,
+        755
+      ],
+      [
+        219,
+        756
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 0,
+    "char_end": 17,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Наши",
+    "polygon": [
+      [
+        471,
+        724
+      ],
+      [
+        531,
+        724
+      ],
+      [
+        531,
+        755
+      ],
+      [
+        471,
+        755
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 18,
+    "char_end": 22,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "дома",
+    "polygon": [
+      [
+        537,
+        724
+      ],
+      [
+        597,
+        724
+      ],
+      [
+        597,
+        755
+      ],
+      [
+        537,
+        755
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 23,
+    "char_end": 27,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "расположены",
+    "polygon": [
+      [
+        604,
+        724
+      ],
+      [
+        768,
+        724
+      ],
+      [
+        768,
+        755
+      ],
+      [
+        604,
+        755
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 28,
+    "char_end": 39,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "в",
+    "polygon": [
+      [
+        775,
+        724
+      ],
+      [
+        790,
+        723
+      ],
+      [
+        790,
+        754
+      ],
+      [
+        775,
+        755
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 40,
+    "char_end": 41,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "160",
+    "polygon": [
+      [
+        796,
+        723
+      ],
+      [
+        833,
+        723
+      ],
+      [
+        833,
+        754
+      ],
+      [
+        796,
+        754
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 42,
+    "char_end": 45,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "-",
+    "polygon": [
+      [
+        840,
+        723
+      ],
+      [
+        846,
+        723
+      ],
+      [
+        846,
+        754
+      ],
+      [
+        840,
+        754
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 46,
+    "char_end": 47,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "200",
+    "polygon": [
+      [
+        853,
+        723
+      ],
+      [
+        898,
+        723
+      ],
+      [
+        898,
+        754
+      ],
+      [
+        853,
+        754
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 48,
+    "char_end": 51,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "метрах",
+    "polygon": [
+      [
+        904,
+        723
+      ],
+      [
+        994,
+        723
+      ],
+      [
+        994,
+        754
+      ],
+      [
+        904,
+        754
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 52,
+    "char_end": 58,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "от",
+    "polygon": [
+      [
+        1001,
+        723
+      ],
+      [
+        1030,
+        723
+      ],
+      [
+        1030,
+        754
+      ],
+      [
+        1001,
+        754
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 59,
+    "char_end": 61,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "самой",
+    "polygon": [
+      [
+        1037,
+        723
+      ],
+      [
+        1112,
+        723
+      ],
+      [
+        1112,
+        754
+      ],
+      [
+        1037,
+        754
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 62,
+    "char_end": 67,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "огромной",
+    "polygon": [
+      [
+        1118,
+        723
+      ],
+      [
+        1238,
+        722
+      ],
+      [
+        1238,
+        753
+      ],
+      [
+        1118,
+        754
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 68,
+    "char_end": 76,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "свалки",
+    "polygon": [
+      [
+        1245,
+        722
+      ],
+      [
+        1334,
+        722
+      ],
+      [
+        1334,
+        753
+      ],
+      [
+        1245,
+        753
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 29,
+    "char_start": 77,
+    "char_end": 83,
+    "confidence": 0.9766140580177307,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "города",
+    "polygon": [
+      [
+        216,
+        761
+      ],
+      [
+        302,
+        761
+      ],
+      [
+        302,
+        791
+      ],
+      [
+        216,
+        791
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 0,
+    "char_end": 6,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "(49",
+    "polygon": [
+      [
+        308,
+        761
+      ],
+      [
+        343,
+        761
+      ],
+      [
+        343,
+        791
+      ],
+      [
+        308,
+        791
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 7,
+    "char_end": 10,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "га),",
+    "polygon": [
+      [
+        350,
+        761
+      ],
+      [
+        391,
+        761
+      ],
+      [
+        391,
+        791
+      ],
+      [
+        350,
+        791
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 11,
+    "char_end": 15,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "которая",
+    "polygon": [
+      [
+        398,
+        761
+      ],
+      [
+        498,
+        760
+      ],
+      [
+        498,
+        790
+      ],
+      [
+        398,
+        791
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 16,
+    "char_end": 23,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "функционирует",
+    "polygon": [
+      [
+        504,
+        760
+      ],
+      [
+        691,
+        760
+      ],
+      [
+        691,
+        790
+      ],
+      [
+        504,
+        790
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 24,
+    "char_end": 37,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "с",
+    "polygon": [
+      [
+        697,
+        760
+      ],
+      [
+        711,
+        760
+      ],
+      [
+        711,
+        790
+      ],
+      [
+        697,
+        790
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 38,
+    "char_end": 39,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "1967",
+    "polygon": [
+      [
+        718,
+        760
+      ],
+      [
+        767,
+        760
+      ],
+      [
+        767,
+        790
+      ],
+      [
+        718,
+        790
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 40,
+    "char_end": 44,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "года.",
+    "polygon": [
+      [
+        774,
+        760
+      ],
+      [
+        837,
+        759
+      ],
+      [
+        837,
+        789
+      ],
+      [
+        774,
+        790
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 45,
+    "char_end": 50,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "За",
+    "polygon": [
+      [
+        844,
+        759
+      ],
+      [
+        872,
+        759
+      ],
+      [
+        872,
+        789
+      ],
+      [
+        844,
+        789
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 51,
+    "char_end": 53,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "время",
+    "polygon": [
+      [
+        879,
+        759
+      ],
+      [
+        950,
+        759
+      ],
+      [
+        950,
+        789
+      ],
+      [
+        879,
+        789
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 54,
+    "char_end": 59,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "существования,",
+    "polygon": [
+      [
+        957,
+        759
+      ],
+      [
+        1149,
+        758
+      ],
+      [
+        1149,
+        788
+      ],
+      [
+        957,
+        789
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 60,
+    "char_end": 74,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "этасвалка",
+    "polygon": [
+      [
+        1156,
+        758
+      ],
+      [
+        1285,
+        758
+      ],
+      [
+        1285,
+        788
+      ],
+      [
+        1156,
+        788
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 75,
+    "char_end": 84,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "все",
+    "polygon": [
+      [
+        1291,
+        758
+      ],
+      [
+        1334,
+        758
+      ],
+      [
+        1334,
+        788
+      ],
+      [
+        1291,
+        788
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 30,
+    "char_start": 85,
+    "char_end": 88,
+    "confidence": 0.9637385010719299,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "ближе",
+    "polygon": [
+      [
+        218,
+        798
+      ],
+      [
+        293,
+        798
+      ],
+      [
+        293,
+        828
+      ],
+      [
+        218,
+        828
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 0,
+    "char_end": 5,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "приближается",
+    "polygon": [
+      [
+        299,
+        798
+      ],
+      [
+        478,
+        798
+      ],
+      [
+        478,
+        828
+      ],
+      [
+        299,
+        828
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 6,
+    "char_end": 18,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "к",
+    "polygon": [
+      [
+        485,
+        798
+      ],
+      [
+        500,
+        797
+      ],
+      [
+        500,
+        827
+      ],
+      [
+        485,
+        828
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 19,
+    "char_end": 20,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "нашим",
+    "polygon": [
+      [
+        507,
+        797
+      ],
+      [
+        581,
+        797
+      ],
+      [
+        581,
+        827
+      ],
+      [
+        507,
+        827
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 21,
+    "char_end": 26,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "жилищам,",
+    "polygon": [
+      [
+        588,
+        797
+      ],
+      [
+        699,
+        797
+      ],
+      [
+        699,
+        827
+      ],
+      [
+        588,
+        827
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 27,
+    "char_end": 35,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "к",
+    "polygon": [
+      [
+        706,
+        797
+      ],
+      [
+        720,
+        797
+      ],
+      [
+        720,
+        827
+      ],
+      [
+        706,
+        827
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 36,
+    "char_end": 37,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "нашему",
+    "polygon": [
+      [
+        727,
+        797
+      ],
+      [
+        817,
+        797
+      ],
+      [
+        817,
+        827
+      ],
+      [
+        727,
+        827
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 38,
+    "char_end": 44,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "детскому",
+    "polygon": [
+      [
+        823,
+        797
+      ],
+      [
+        943,
+        797
+      ],
+      [
+        943,
+        827
+      ],
+      [
+        823,
+        827
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 45,
+    "char_end": 53,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "саду,расстояние",
+    "polygon": [
+      [
+        949,
+        797
+      ],
+      [
+        1165,
+        796
+      ],
+      [
+        1165,
+        826
+      ],
+      [
+        949,
+        827
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 54,
+    "char_end": 69,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "от",
+    "polygon": [
+      [
+        1171,
+        796
+      ],
+      [
+        1201,
+        796
+      ],
+      [
+        1201,
+        826
+      ],
+      [
+        1171,
+        826
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 70,
+    "char_end": 72,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "свалки",
+    "polygon": [
+      [
+        1208,
+        796
+      ],
+      [
+        1297,
+        796
+      ],
+      [
+        1297,
+        826
+      ],
+      [
+        1208,
+        826
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 73,
+    "char_end": 79,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "до",
+    "polygon": [
+      [
+        1304,
+        796
+      ],
+      [
+        1334,
+        796
+      ],
+      [
+        1334,
+        826
+      ],
+      [
+        1304,
+        826
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 31,
+    "char_start": 80,
+    "char_end": 82,
+    "confidence": 0.9632673263549805,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "детского",
+    "polygon": [
+      [
+        218,
+        835
+      ],
+      [
+        339,
+        834
+      ],
+      [
+        340,
+        864
+      ],
+      [
+        219,
+        865
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 32,
+    "char_start": 0,
+    "char_end": 8,
+    "confidence": 0.9796026945114136,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "сада",
+    "polygon": [
+      [
+        346,
+        834
+      ],
+      [
+        407,
+        833
+      ],
+      [
+        408,
+        863
+      ],
+      [
+        347,
+        864
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 32,
+    "char_start": 9,
+    "char_end": 13,
+    "confidence": 0.9796026945114136,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "составляет",
+    "polygon": [
+      [
+        414,
+        833
+      ],
+      [
+        566,
+        832
+      ],
+      [
+        567,
+        862
+      ],
+      [
+        415,
+        863
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 32,
+    "char_start": 14,
+    "char_end": 24,
+    "confidence": 0.9796026945114136,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "300",
+    "polygon": [
+      [
+        572,
+        831
+      ],
+      [
+        618,
+        831
+      ],
+      [
+        619,
+        861
+      ],
+      [
+        573,
+        861
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 32,
+    "char_start": 25,
+    "char_end": 28,
+    "confidence": 0.9796026945114136,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "M.",
+    "polygon": [
+      [
+        623,
+        838
+      ],
+      [
+        656,
+        838
+      ],
+      [
+        656,
+        860
+      ],
+      [
+        623,
+        860
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 33,
+    "char_start": 0,
+    "char_end": 2,
+    "confidence": 0.9913780689239502,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Горы",
+    "polygon": [
+      [
+        663,
+        833
+      ],
+      [
+        728,
+        833
+      ],
+      [
+        728,
+        863
+      ],
+      [
+        663,
+        863
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 34,
+    "char_start": 0,
+    "char_end": 4,
+    "confidence": 0.9683789014816284,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "мусора",
+    "polygon": [
+      [
+        736,
+        833
+      ],
+      [
+        833,
+        832
+      ],
+      [
+        833,
+        862
+      ],
+      [
+        736,
+        863
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 34,
+    "char_start": 5,
+    "char_end": 11,
+    "confidence": 0.9683789014816284,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "все",
+    "polygon": [
+      [
+        841,
+        832
+      ],
+      [
+        890,
+        832
+      ],
+      [
+        890,
+        862
+      ],
+      [
+        841,
+        862
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 34,
+    "char_start": 12,
+    "char_end": 15,
+    "confidence": 0.9683789014816284,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "выше,",
+    "polygon": [
+      [
+        897,
+        832
+      ],
+      [
+        970,
+        832
+      ],
+      [
+        970,
+        862
+      ],
+      [
+        897,
+        862
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 34,
+    "char_start": 16,
+    "char_end": 21,
+    "confidence": 0.9683789014816284,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "зловоние",
+    "polygon": [
+      [
+        977,
+        832
+      ],
+      [
+        1107,
+        832
+      ],
+      [
+        1107,
+        862
+      ],
+      [
+        977,
+        862
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 34,
+    "char_start": 22,
+    "char_end": 30,
+    "confidence": 0.9683789014816284,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "становится",
+    "polygon": [
+      [
+        1115,
+        832
+      ],
+      [
+        1278,
+        831
+      ],
+      [
+        1278,
+        861
+      ],
+      [
+        1115,
+        862
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 34,
+    "char_start": 31,
+    "char_end": 41,
+    "confidence": 0.9683789014816284,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "все",
+    "polygon": [
+      [
+        1285,
+        831
+      ],
+      [
+        1334,
+        831
+      ],
+      [
+        1334,
+        861
+      ],
+      [
+        1285,
+        861
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 34,
+    "char_start": 42,
+    "char_end": 45,
+    "confidence": 0.9683789014816284,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "невыносимее,",
+    "polygon": [
+      [
+        218,
+        870
+      ],
+      [
+        398,
+        870
+      ],
+      [
+        398,
+        900
+      ],
+      [
+        218,
+        900
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 35,
+    "char_start": 0,
+    "char_end": 12,
+    "confidence": 0.9700534343719482,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "фильтрат",
+    "polygon": [
+      [
+        405,
+        869
+      ],
+      [
+        530,
+        869
+      ],
+      [
+        530,
+        899
+      ],
+      [
+        405,
+        899
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 35,
+    "char_start": 13,
+    "char_end": 21,
+    "confidence": 0.9700534343719482,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "со",
+    "polygon": [
+      [
+        538,
+        869
+      ],
+      [
+        569,
+        869
+      ],
+      [
+        569,
+        899
+      ],
+      [
+        538,
+        899
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 35,
+    "char_start": 22,
+    "char_end": 24,
+    "confidence": 0.9700534343719482,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "свалки",
+    "polygon": [
+      [
+        576,
+        869
+      ],
+      [
+        670,
+        869
+      ],
+      [
+        670,
+        899
+      ],
+      [
+        576,
+        899
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 35,
+    "char_start": 25,
+    "char_end": 31,
+    "confidence": 0.9700534343719482,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "отравил",
+    "polygon": [
+      [
+        677,
+        869
+      ],
+      [
+        787,
+        868
+      ],
+      [
+        787,
+        898
+      ],
+      [
+        677,
+        899
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 35,
+    "char_start": 32,
+    "char_end": 39,
+    "confidence": 0.9700534343719482,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "ближайшие",
+    "polygon": [
+      [
+        794,
+        868
+      ],
+      [
+        936,
+        868
+      ],
+      [
+        936,
+        898
+      ],
+      [
+        794,
+        898
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 35,
+    "char_start": 40,
+    "char_end": 49,
+    "confidence": 0.9700534343719482,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "земли",
+    "polygon": [
+      [
+        943,
+        868
+      ],
+      [
+        1021,
+        868
+      ],
+      [
+        1021,
+        898
+      ],
+      [
+        943,
+        898
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 35,
+    "char_start": 50,
+    "char_end": 55,
+    "confidence": 0.9700534343719482,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "на",
+    "polygon": [
+      [
+        1028,
+        868
+      ],
+      [
+        1060,
+        868
+      ],
+      [
+        1060,
+        898
+      ],
+      [
+        1028,
+        898
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 35,
+    "char_start": 56,
+    "char_end": 58,
+    "confidence": 0.9700534343719482,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "огромных",
+    "polygon": [
+      [
+        1067,
+        868
+      ],
+      [
+        1192,
+        867
+      ],
+      [
+        1192,
+        897
+      ],
+      [
+        1067,
+        898
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 35,
+    "char_start": 59,
+    "char_end": 67,
+    "confidence": 0.9700534343719482,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "площадях,",
+    "polygon": [
+      [
+        1199,
+        867
+      ],
+      [
+        1332,
+        867
+      ],
+      [
+        1332,
+        897
+      ],
+      [
+        1199,
+        897
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 35,
+    "char_start": 68,
+    "char_end": 77,
+    "confidence": 0.9700534343719482,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "которые",
+    "polygon": [
+      [
+        219,
+        909
+      ],
+      [
+        323,
+        909
+      ],
+      [
+        324,
+        936
+      ],
+      [
+        220,
+        936
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 36,
+    "char_start": 0,
+    "char_end": 7,
+    "confidence": 0.9766496419906616,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "чиновники",
+    "polygon": [
+      [
+        330,
+        909
+      ],
+      [
+        463,
+        908
+      ],
+      [
+        464,
+        935
+      ],
+      [
+        331,
+        936
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 36,
+    "char_start": 8,
+    "char_end": 17,
+    "confidence": 0.9766496419906616,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "даже",
+    "polygon": [
+      [
+        470,
+        908
+      ],
+      [
+        529,
+        908
+      ],
+      [
+        530,
+        935
+      ],
+      [
+        471,
+        935
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 36,
+    "char_start": 18,
+    "char_end": 22,
+    "confidence": 0.9766496419906616,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "боятся",
+    "polygon": [
+      [
+        536,
+        908
+      ],
+      [
+        625,
+        908
+      ],
+      [
+        626,
+        935
+      ],
+      [
+        537,
+        935
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 36,
+    "char_start": 23,
+    "char_end": 29,
+    "confidence": 0.9766496419906616,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "озвучивать,",
+    "polygon": [
+      [
+        632,
+        908
+      ],
+      [
+        787,
+        907
+      ],
+      [
+        787,
+        934
+      ],
+      [
+        632,
+        935
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 36,
+    "char_start": 30,
+    "char_end": 41,
+    "confidence": 0.9766496419906616,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "токсичные",
+    "polygon": [
+      [
+        794,
+        907
+      ],
+      [
+        927,
+        906
+      ],
+      [
+        928,
+        933
+      ],
+      [
+        794,
+        934
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 36,
+    "char_start": 42,
+    "char_end": 51,
+    "confidence": 0.9766496419906616,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "отходы",
+    "polygon": [
+      [
+        934,
+        906
+      ],
+      [
+        1023,
+        906
+      ],
+      [
+        1023,
+        933
+      ],
+      [
+        934,
+        933
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 36,
+    "char_start": 52,
+    "char_end": 58,
+    "confidence": 0.9766496419906616,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "прямиком",
+    "polygon": [
+      [
+        1030,
+        906
+      ],
+      [
+        1149,
+        906
+      ],
+      [
+        1149,
+        933
+      ],
+      [
+        1030,
+        933
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 36,
+    "char_start": 59,
+    "char_end": 67,
+    "confidence": 0.9766496419906616,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "льются",
+    "polygon": [
+      [
+        1155,
+        906
+      ],
+      [
+        1244,
+        905
+      ],
+      [
+        1244,
+        932
+      ],
+      [
+        1155,
+        933
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 36,
+    "char_start": 68,
+    "char_end": 74,
+    "confidence": 0.9766496419906616,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "в",
+    "polygon": [
+      [
+        1251,
+        905
+      ],
+      [
+        1266,
+        905
+      ],
+      [
+        1266,
+        932
+      ],
+      [
+        1251,
+        932
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 36,
+    "char_start": 75,
+    "char_end": 76,
+    "confidence": 0.9766496419906616,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "реку",
+    "polygon": [
+      [
+        1273,
+        905
+      ],
+      [
+        1332,
+        905
+      ],
+      [
+        1332,
+        932
+      ],
+      [
+        1273,
+        932
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 36,
+    "char_start": 77,
+    "char_end": 81,
+    "confidence": 0.9766496419906616,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Норниста.",
+    "polygon": [
+      [
+        218,
+        938
+      ],
+      [
+        343,
+        938
+      ],
+      [
+        343,
+        972
+      ],
+      [
+        218,
+        972
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 0,
+    "char_end": 9,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "И",
+    "polygon": [
+      [
+        349,
+        938
+      ],
+      [
+        364,
+        938
+      ],
+      [
+        364,
+        972
+      ],
+      [
+        349,
+        972
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 10,
+    "char_end": 11,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "так",
+    "polygon": [
+      [
+        371,
+        938
+      ],
+      [
+        415,
+        938
+      ],
+      [
+        415,
+        972
+      ],
+      [
+        371,
+        972
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 12,
+    "char_end": 15,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "уже",
+    "polygon": [
+      [
+        422,
+        938
+      ],
+      [
+        466,
+        938
+      ],
+      [
+        466,
+        972
+      ],
+      [
+        422,
+        972
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 16,
+    "char_end": 19,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "много",
+    "polygon": [
+      [
+        473,
+        938
+      ],
+      [
+        547,
+        937
+      ],
+      [
+        547,
+        971
+      ],
+      [
+        473,
+        972
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 20,
+    "char_end": 25,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "лет,",
+    "polygon": [
+      [
+        553,
+        937
+      ],
+      [
+        604,
+        937
+      ],
+      [
+        604,
+        971
+      ],
+      [
+        553,
+        971
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 26,
+    "char_end": 30,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "обстановка",
+    "polygon": [
+      [
+        611,
+        937
+      ],
+      [
+        758,
+        937
+      ],
+      [
+        758,
+        971
+      ],
+      [
+        611,
+        971
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 31,
+    "char_end": 41,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "накалена",
+    "polygon": [
+      [
+        765,
+        937
+      ],
+      [
+        883,
+        937
+      ],
+      [
+        883,
+        971
+      ],
+      [
+        765,
+        971
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 42,
+    "char_end": 50,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "до",
+    "polygon": [
+      [
+        890,
+        937
+      ],
+      [
+        919,
+        937
+      ],
+      [
+        919,
+        971
+      ],
+      [
+        890,
+        971
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 51,
+    "char_end": 53,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "предела:",
+    "polygon": [
+      [
+        926,
+        937
+      ],
+      [
+        1036,
+        937
+      ],
+      [
+        1036,
+        971
+      ],
+      [
+        926,
+        971
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 54,
+    "char_end": 62,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Мы",
+    "polygon": [
+      [
+        1043,
+        937
+      ],
+      [
+        1072,
+        936
+      ],
+      [
+        1072,
+        970
+      ],
+      [
+        1043,
+        971
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 63,
+    "char_end": 65,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "хотим",
+    "polygon": [
+      [
+        1079,
+        936
+      ],
+      [
+        1153,
+        936
+      ],
+      [
+        1153,
+        970
+      ],
+      [
+        1079,
+        970
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 66,
+    "char_end": 71,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "жить,",
+    "polygon": [
+      [
+        1159,
+        936
+      ],
+      [
+        1225,
+        936
+      ],
+      [
+        1225,
+        970
+      ],
+      [
+        1159,
+        970
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 72,
+    "char_end": 77,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "растить",
+    "polygon": [
+      [
+        1232,
+        936
+      ],
+      [
+        1335,
+        936
+      ],
+      [
+        1335,
+        970
+      ],
+      [
+        1232,
+        970
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 37,
+    "char_start": 78,
+    "char_end": 85,
+    "confidence": 0.9680635333061218,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "детей",
+    "polygon": [
+      [
+        221,
+        979
+      ],
+      [
+        295,
+        979
+      ],
+      [
+        295,
+        1007
+      ],
+      [
+        221,
+        1007
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 38,
+    "char_start": 0,
+    "char_end": 5,
+    "confidence": 0.9877005219459534,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "и",
+    "polygon": [
+      [
+        302,
+        979
+      ],
+      [
+        317,
+        979
+      ],
+      [
+        317,
+        1007
+      ],
+      [
+        302,
+        1007
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 38,
+    "char_start": 6,
+    "char_end": 7,
+    "confidence": 0.9877005219459534,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "быть",
+    "polygon": [
+      [
+        324,
+        979
+      ],
+      [
+        383,
+        979
+      ],
+      [
+        383,
+        1007
+      ],
+      [
+        324,
+        1007
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 38,
+    "char_start": 8,
+    "char_end": 12,
+    "confidence": 0.9877005219459534,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "здоровыми.",
+    "polygon": [
+      [
+        390,
+        979
+      ],
+      [
+        530,
+        979
+      ],
+      [
+        530,
+        1007
+      ],
+      [
+        390,
+        1007
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 38,
+    "char_start": 13,
+    "char_end": 23,
+    "confidence": 0.9877005219459534,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Владимир",
+    "polygon": [
+      [
+        299,
+        1011
+      ],
+      [
+        428,
+        1011
+      ],
+      [
+        428,
+        1047
+      ],
+      [
+        299,
+        1047
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 39,
+    "char_start": 0,
+    "char_end": 8,
+    "confidence": 0.9762673377990723,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (PER: владимир, владимирович)"
+  },
+  {
+    "text": "Владимирович,",
+    "polygon": [
+      [
+        435,
+        1010
+      ],
+      [
+        636,
+        1010
+      ],
+      [
+        636,
+        1046
+      ],
+      [
+        435,
+        1047
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 39,
+    "char_start": 9,
+    "char_end": 22,
+    "confidence": 0.9762673377990723,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (PER: владимир, владимирович)"
+  },
+  {
+    "text": "ежегодно,",
+    "polygon": [
+      [
+        643,
+        1010
+      ],
+      [
+        779,
+        1009
+      ],
+      [
+        779,
+        1046
+      ],
+      [
+        643,
+        1046
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 39,
+    "char_start": 23,
+    "char_end": 32,
+    "confidence": 0.9762673377990723,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "мы",
+    "polygon": [
+      [
+        787,
+        1009
+      ],
+      [
+        819,
+        1009
+      ],
+      [
+        819,
+        1045
+      ],
+      [
+        787,
+        1046
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 39,
+    "char_start": 33,
+    "char_end": 35,
+    "confidence": 0.9762673377990723,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "обращаемся",
+    "polygon": [
+      [
+        826,
+        1009
+      ],
+      [
+        987,
+        1008
+      ],
+      [
+        987,
+        1045
+      ],
+      [
+        826,
+        1045
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 39,
+    "char_start": 36,
+    "char_end": 46,
+    "confidence": 0.9762673377990723,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "к",
+    "polygon": [
+      [
+        994,
+        1008
+      ],
+      [
+        1011,
+        1008
+      ],
+      [
+        1011,
+        1045
+      ],
+      [
+        994,
+        1045
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 39,
+    "char_start": 47,
+    "char_end": 48,
+    "confidence": 0.9762673377990723,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Вам",
+    "polygon": [
+      [
+        1018,
+        1008
+      ],
+      [
+        1066,
+        1008
+      ],
+      [
+        1066,
+        1045
+      ],
+      [
+        1018,
+        1045
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 39,
+    "char_start": 49,
+    "char_end": 52,
+    "confidence": 0.9762673377990723,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "на",
+    "polygon": [
+      [
+        1073,
+        1008
+      ],
+      [
+        1106,
+        1008
+      ],
+      [
+        1106,
+        1045
+      ],
+      [
+        1073,
+        1045
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 39,
+    "char_start": 53,
+    "char_end": 55,
+    "confidence": 0.9762673377990723,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "горячую",
+    "polygon": [
+      [
+        1113,
+        1008
+      ],
+      [
+        1226,
+        1007
+      ],
+      [
+        1226,
+        1044
+      ],
+      [
+        1113,
+        1045
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 39,
+    "char_start": 56,
+    "char_end": 63,
+    "confidence": 0.9762673377990723,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "линию,с",
+    "polygon": [
+      [
+        1233,
+        1007
+      ],
+      [
+        1337,
+        1007
+      ],
+      [
+        1337,
+        1044
+      ],
+      [
+        1233,
+        1044
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 39,
+    "char_start": 64,
+    "char_end": 71,
+    "confidence": 0.9762673377990723,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "просьбой",
+    "polygon": [
+      [
+        217,
+        1047
+      ],
+      [
+        348,
+        1048
+      ],
+      [
+        348,
+        1081
+      ],
+      [
+        216,
+        1080
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 40,
+    "char_start": 0,
+    "char_end": 8,
+    "confidence": 0.9622820615768433,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "услышать",
+    "polygon": [
+      [
+        356,
+        1048
+      ],
+      [
+        487,
+        1049
+      ],
+      [
+        487,
+        1082
+      ],
+      [
+        355,
+        1081
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 40,
+    "char_start": 9,
+    "char_end": 17,
+    "confidence": 0.9622820615768433,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Hac",
+    "polygon": [
+      [
+        503,
+        1054
+      ],
+      [
+        551,
+        1054
+      ],
+      [
+        551,
+        1077
+      ],
+      [
+        503,
+        1077
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 41,
+    "char_start": 0,
+    "char_end": 3,
+    "confidence": 0.7950597405433655,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "H",
+    "polygon": [
+      [
+        566,
+        1054
+      ],
+      [
+        592,
+        1054
+      ],
+      [
+        592,
+        1076
+      ],
+      [
+        566,
+        1076
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 42,
+    "char_start": 0,
+    "char_end": 1,
+    "confidence": 0.8592450022697449,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "содействовать",
+    "polygon": [
+      [
+        585,
+        1046
+      ],
+      [
+        798,
+        1045
+      ],
+      [
+        798,
+        1079
+      ],
+      [
+        585,
+        1080
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 43,
+    "char_start": 0,
+    "char_end": 13,
+    "confidence": 0.981719970703125,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "в",
+    "polygon": [
+      [
+        805,
+        1045
+      ],
+      [
+        821,
+        1045
+      ],
+      [
+        821,
+        1079
+      ],
+      [
+        805,
+        1079
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 43,
+    "char_start": 14,
+    "char_end": 15,
+    "confidence": 0.981719970703125,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "скорейшем",
+    "polygon": [
+      [
+        829,
+        1045
+      ],
+      [
+        976,
+        1045
+      ],
+      [
+        976,
+        1079
+      ],
+      [
+        829,
+        1079
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 43,
+    "char_start": 16,
+    "char_end": 25,
+    "confidence": 0.981719970703125,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "прекращении",
+    "polygon": [
+      [
+        983,
+        1045
+      ],
+      [
+        1163,
+        1044
+      ],
+      [
+        1163,
+        1078
+      ],
+      [
+        983,
+        1079
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 43,
+    "char_start": 26,
+    "char_end": 37,
+    "confidence": 0.981719970703125,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "преступной",
+    "polygon": [
+      [
+        1170,
+        1044
+      ],
+      [
+        1334,
+        1044
+      ],
+      [
+        1334,
+        1078
+      ],
+      [
+        1170,
+        1078
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 43,
+    "char_start": 38,
+    "char_end": 48,
+    "confidence": 0.981719970703125,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "эксплуатации",
+    "polygon": [
+      [
+        222,
+        1088
+      ],
+      [
+        392,
+        1088
+      ],
+      [
+        392,
+        1116
+      ],
+      [
+        222,
+        1116
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 44,
+    "char_start": 0,
+    "char_end": 12,
+    "confidence": 0.9939245581626892,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "полигона",
+    "polygon": [
+      [
+        415,
+        1087
+      ],
+      [
+        547,
+        1087
+      ],
+      [
+        547,
+        1117
+      ],
+      [
+        415,
+        1117
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 45,
+    "char_start": 0,
+    "char_end": 8,
+    "confidence": 0.968450129032135,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Гусинобродский»,",
+    "polygon": [
+      [
+        554,
+        1087
+      ],
+      [
+        810,
+        1086
+      ],
+      [
+        810,
+        1116
+      ],
+      [
+        554,
+        1117
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 45,
+    "char_start": 9,
+    "char_end": 25,
+    "confidence": 0.968450129032135,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: гусинобродский)"
+  },
+  {
+    "text": "расположен",
+    "polygon": [
+      [
+        817,
+        1086
+      ],
+      [
+        982,
+        1085
+      ],
+      [
+        982,
+        1115
+      ],
+      [
+        817,
+        1116
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 45,
+    "char_start": 26,
+    "char_end": 36,
+    "confidence": 0.968450129032135,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "в",
+    "polygon": [
+      [
+        997,
+        1086
+      ],
+      [
+        1023,
+        1086
+      ],
+      [
+        1023,
+        1114
+      ],
+      [
+        997,
+        1114
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 46,
+    "char_start": 0,
+    "char_end": 1,
+    "confidence": 0.936343789100647,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "г.",
+    "polygon": [
+      [
+        1046,
+        1086
+      ],
+      [
+        1084,
+        1086
+      ],
+      [
+        1084,
+        1114
+      ],
+      [
+        1046,
+        1114
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 46,
+    "char_start": 3,
+    "char_end": 5,
+    "confidence": 0.936343789100647,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Новосибирск,",
+    "polygon": [
+      [
+        1094,
+        1083
+      ],
+      [
+        1277,
+        1085
+      ],
+      [
+        1277,
+        1115
+      ],
+      [
+        1094,
+        1113
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 47,
+    "char_start": 0,
+    "char_end": 12,
+    "confidence": 0.947292149066925,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "ул.",
+    "polygon": [
+      [
+        1288,
+        1087
+      ],
+      [
+        1333,
+        1087
+      ],
+      [
+        1333,
+        1114
+      ],
+      [
+        1288,
+        1114
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 48,
+    "char_start": 0,
+    "char_end": 3,
+    "confidence": 0.4864126741886139,
+    "is_pii": true,
+    "pii_reason": "Low Confidence / Handwritten (conf=0.49)"
+  },
+  {
+    "text": "Профилактическая,73.",
+    "polygon": [
+      [
+        221,
+        1120
+      ],
+      [
+        500,
+        1120
+      ],
+      [
+        500,
+        1154
+      ],
+      [
+        221,
+        1154
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 49,
+    "char_start": 0,
+    "char_end": 20,
+    "confidence": 0.9745087623596191,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Город",
+    "polygon": [
+      [
+        303,
+        1157
+      ],
+      [
+        376,
+        1157
+      ],
+      [
+        376,
+        1186
+      ],
+      [
+        303,
+        1186
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 50,
+    "char_start": 0,
+    "char_end": 5,
+    "confidence": 0.9826362133026123,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: город)"
+  },
+  {
+    "text": "Новосибирск",
+    "polygon": [
+      [
+        383,
+        1157
+      ],
+      [
+        543,
+        1157
+      ],
+      [
+        543,
+        1186
+      ],
+      [
+        383,
+        1186
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 50,
+    "char_start": 6,
+    "char_end": 17,
+    "confidence": 0.9826362133026123,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "является",
+    "polygon": [
+      [
+        550,
+        1157
+      ],
+      [
+        667,
+        1156
+      ],
+      [
+        667,
+        1185
+      ],
+      [
+        550,
+        1186
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 50,
+    "char_start": 18,
+    "char_end": 26,
+    "confidence": 0.9826362133026123,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "крупнейшим",
+    "polygon": [
+      [
+        673,
+        1156
+      ],
+      [
+        820,
+        1156
+      ],
+      [
+        820,
+        1185
+      ],
+      [
+        673,
+        1185
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 50,
+    "char_start": 27,
+    "char_end": 37,
+    "confidence": 0.9826362133026123,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "муниципалитетом",
+    "polygon": [
+      [
+        826,
+        1156
+      ],
+      [
+        1045,
+        1156
+      ],
+      [
+        1045,
+        1185
+      ],
+      [
+        826,
+        1185
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 50,
+    "char_start": 38,
+    "char_end": 53,
+    "confidence": 0.9826362133026123,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Российской",
+    "polygon": [
+      [
+        1052,
+        1156
+      ],
+      [
+        1198,
+        1155
+      ],
+      [
+        1198,
+        1184
+      ],
+      [
+        1052,
+        1185
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 50,
+    "char_start": 54,
+    "char_end": 64,
+    "confidence": 0.9826362133026123,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Федерации",
+    "polygon": [
+      [
+        1205,
+        1155
+      ],
+      [
+        1336,
+        1155
+      ],
+      [
+        1336,
+        1184
+      ],
+      [
+        1205,
+        1184
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 50,
+    "char_start": 65,
+    "char_end": 74,
+    "confidence": 0.9826362133026123,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "с",
+    "polygon": [
+      [
+        221,
+        1195
+      ],
+      [
+        236,
+        1195
+      ],
+      [
+        236,
+        1222
+      ],
+      [
+        221,
+        1222
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 51,
+    "char_start": 0,
+    "char_end": 1,
+    "confidence": 0.9725304841995239,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "населением",
+    "polygon": [
+      [
+        243,
+        1195
+      ],
+      [
+        394,
+        1195
+      ],
+      [
+        394,
+        1222
+      ],
+      [
+        243,
+        1222
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 51,
+    "char_start": 2,
+    "char_end": 12,
+    "confidence": 0.9725304841995239,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "почти",
+    "polygon": [
+      [
+        401,
+        1195
+      ],
+      [
+        477,
+        1195
+      ],
+      [
+        477,
+        1222
+      ],
+      [
+        401,
+        1222
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 51,
+    "char_start": 13,
+    "char_end": 18,
+    "confidence": 0.9725304841995239,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "1,7",
+    "polygon": [
+      [
+        483,
+        1195
+      ],
+      [
+        512,
+        1195
+      ],
+      [
+        512,
+        1222
+      ],
+      [
+        483,
+        1222
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 51,
+    "char_start": 19,
+    "char_end": 22,
+    "confidence": 0.9725304841995239,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "млн.",
+    "polygon": [
+      [
+        519,
+        1195
+      ],
+      [
+        571,
+        1195
+      ],
+      [
+        571,
+        1222
+      ],
+      [
+        519,
+        1222
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 51,
+    "char_start": 23,
+    "char_end": 27,
+    "confidence": 0.9725304841995239,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "человек.",
+    "polygon": [
+      [
+        578,
+        1195
+      ],
+      [
+        691,
+        1195
+      ],
+      [
+        691,
+        1222
+      ],
+      [
+        578,
+        1222
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 51,
+    "char_start": 28,
+    "char_end": 36,
+    "confidence": 0.9725304841995239,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "В",
+    "polygon": [
+      [
+        698,
+        1195
+      ],
+      [
+        713,
+        1195
+      ],
+      [
+        713,
+        1222
+      ],
+      [
+        698,
+        1222
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 51,
+    "char_start": 37,
+    "char_end": 38,
+    "confidence": 0.9725304841995239,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "процессе",
+    "polygon": [
+      [
+        719,
+        1195
+      ],
+      [
+        840,
+        1195
+      ],
+      [
+        840,
+        1222
+      ],
+      [
+        719,
+        1222
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 51,
+    "char_start": 39,
+    "char_end": 47,
+    "confidence": 0.9725304841995239,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "жизнедеятельности",
+    "polygon": [
+      [
+        847,
+        1195
+      ],
+      [
+        1104,
+        1195
+      ],
+      [
+        1104,
+        1222
+      ],
+      [
+        847,
+        1222
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 51,
+    "char_start": 48,
+    "char_end": 65,
+    "confidence": 0.9725304841995239,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "жителей,",
+    "polygon": [
+      [
+        1111,
+        1195
+      ],
+      [
+        1224,
+        1195
+      ],
+      [
+        1224,
+        1222
+      ],
+      [
+        1111,
+        1222
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 51,
+    "char_start": 66,
+    "char_end": 74,
+    "confidence": 0.9725304841995239,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "a",
+    "polygon": [
+      [
+        1234,
+        1198
+      ],
+      [
+        1252,
+        1198
+      ],
+      [
+        1252,
+        1217
+      ],
+      [
+        1234,
+        1217
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 52,
+    "char_start": 0,
+    "char_end": 1,
+    "confidence": 0.9628674387931824,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "также",
+    "polygon": [
+      [
+        1256,
+        1196
+      ],
+      [
+        1334,
+        1196
+      ],
+      [
+        1334,
+        1219
+      ],
+      [
+        1256,
+        1219
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 53,
+    "char_start": 0,
+    "char_end": 5,
+    "confidence": 0.9805463552474976,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "производственной",
+    "polygon": [
+      [
+        222,
+        1229
+      ],
+      [
+        461,
+        1229
+      ],
+      [
+        461,
+        1259
+      ],
+      [
+        222,
+        1259
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 54,
+    "char_start": 0,
+    "char_end": 16,
+    "confidence": 0.9858554005622864,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "деятельности",
+    "polygon": [
+      [
+        467,
+        1229
+      ],
+      [
+        646,
+        1229
+      ],
+      [
+        646,
+        1259
+      ],
+      [
+        467,
+        1259
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 54,
+    "char_start": 17,
+    "char_end": 29,
+    "confidence": 0.9858554005622864,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "предприятий",
+    "polygon": [
+      [
+        653,
+        1229
+      ],
+      [
+        817,
+        1229
+      ],
+      [
+        817,
+        1259
+      ],
+      [
+        653,
+        1259
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 54,
+    "char_start": 30,
+    "char_end": 41,
+    "confidence": 0.9858554005622864,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "формируется",
+    "polygon": [
+      [
+        828,
+        1231
+      ],
+      [
+        995,
+        1230
+      ],
+      [
+        995,
+        1257
+      ],
+      [
+        828,
+        1258
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 55,
+    "char_start": 0,
+    "char_end": 11,
+    "confidence": 0.989596426486969,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "значительноеколичество",
+    "polygon": [
+      [
+        1002,
+        1230
+      ],
+      [
+        1335,
+        1229
+      ],
+      [
+        1335,
+        1256
+      ],
+      [
+        1002,
+        1257
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 55,
+    "char_start": 12,
+    "char_end": 34,
+    "confidence": 0.989596426486969,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "твердых",
+    "polygon": [
+      [
+        222,
+        1264
+      ],
+      [
+        331,
+        1264
+      ],
+      [
+        331,
+        1294
+      ],
+      [
+        222,
+        1294
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 56,
+    "char_start": 0,
+    "char_end": 7,
+    "confidence": 0.9754206538200378,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "коммунальных",
+    "polygon": [
+      [
+        338,
+        1264
+      ],
+      [
+        526,
+        1264
+      ],
+      [
+        526,
+        1294
+      ],
+      [
+        338,
+        1294
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 56,
+    "char_start": 8,
+    "char_end": 20,
+    "confidence": 0.9754206538200378,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "отходов",
+    "polygon": [
+      [
+        533,
+        1264
+      ],
+      [
+        642,
+        1264
+      ],
+      [
+        642,
+        1294
+      ],
+      [
+        533,
+        1294
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 56,
+    "char_start": 21,
+    "char_end": 28,
+    "confidence": 0.9754206538200378,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "(далее",
+    "polygon": [
+      [
+        649,
+        1264
+      ],
+      [
+        734,
+        1264
+      ],
+      [
+        734,
+        1294
+      ],
+      [
+        649,
+        1294
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 56,
+    "char_start": 29,
+    "char_end": 35,
+    "confidence": 0.9754206538200378,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Тко),",
+    "polygon": [
+      [
+        741,
+        1264
+      ],
+      [
+        802,
+        1264
+      ],
+      [
+        802,
+        1294
+      ],
+      [
+        741,
+        1294
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 56,
+    "char_start": 36,
+    "char_end": 41,
+    "confidence": 0.9754206538200378,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: тко)"
+  },
+  {
+    "text": "которые",
+    "polygon": [
+      [
+        809,
+        1264
+      ],
+      [
+        918,
+        1264
+      ],
+      [
+        918,
+        1294
+      ],
+      [
+        809,
+        1294
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 56,
+    "char_start": 42,
+    "char_end": 49,
+    "confidence": 0.9754206538200378,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "вывозятся",
+    "polygon": [
+      [
+        926,
+        1264
+      ],
+      [
+        1066,
+        1264
+      ],
+      [
+        1066,
+        1294
+      ],
+      [
+        926,
+        1294
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 56,
+    "char_start": 50,
+    "char_end": 59,
+    "confidence": 0.9754206538200378,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "для",
+    "polygon": [
+      [
+        1073,
+        1264
+      ],
+      [
+        1120,
+        1264
+      ],
+      [
+        1120,
+        1294
+      ],
+      [
+        1073,
+        1294
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 56,
+    "char_start": 60,
+    "char_end": 63,
+    "confidence": 0.9754206538200378,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "захоронения",
+    "polygon": [
+      [
+        1127,
+        1264
+      ],
+      [
+        1299,
+        1264
+      ],
+      [
+        1299,
+        1294
+      ],
+      [
+        1127,
+        1294
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 56,
+    "char_start": 64,
+    "char_end": 75,
+    "confidence": 0.9754206538200378,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "на",
+    "polygon": [
+      [
+        1306,
+        1264
+      ],
+      [
+        1337,
+        1264
+      ],
+      [
+        1337,
+        1294
+      ],
+      [
+        1306,
+        1294
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 56,
+    "char_start": 76,
+    "char_end": 78,
+    "confidence": 0.9754206538200378,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "полигон",
+    "polygon": [
+      [
+        221,
+        1298
+      ],
+      [
+        329,
+        1298
+      ],
+      [
+        329,
+        1329
+      ],
+      [
+        221,
+        1329
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 57,
+    "char_start": 0,
+    "char_end": 7,
+    "confidence": 0.9683603048324585,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "«Гусинобродский»",
+    "polygon": [
+      [
+        336,
+        1298
+      ],
+      [
+        582,
+        1298
+      ],
+      [
+        582,
+        1329
+      ],
+      [
+        336,
+        1329
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 57,
+    "char_start": 8,
+    "char_end": 24,
+    "confidence": 0.9683603048324585,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "(обслуживает",
+    "polygon": [
+      [
+        589,
+        1298
+      ],
+      [
+        766,
+        1298
+      ],
+      [
+        766,
+        1329
+      ],
+      [
+        589,
+        1329
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 57,
+    "char_start": 25,
+    "char_end": 37,
+    "confidence": 0.9683603048324585,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Октябрьский,",
+    "polygon": [
+      [
+        773,
+        1298
+      ],
+      [
+        949,
+        1297
+      ],
+      [
+        949,
+        1328
+      ],
+      [
+        773,
+        1329
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 57,
+    "char_start": 38,
+    "char_end": 50,
+    "confidence": 0.9683603048324585,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: октябрьский)"
+  },
+  {
+    "text": "Дзержинский,",
+    "polygon": [
+      [
+        956,
+        1297
+      ],
+      [
+        1132,
+        1297
+      ],
+      [
+        1132,
+        1328
+      ],
+      [
+        956,
+        1328
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 57,
+    "char_start": 51,
+    "char_end": 63,
+    "confidence": 0.9683603048324585,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: дзержинский)"
+  },
+  {
+    "text": "Первомайский,",
+    "polygon": [
+      [
+        1139,
+        1297
+      ],
+      [
+        1331,
+        1297
+      ],
+      [
+        1331,
+        1328
+      ],
+      [
+        1139,
+        1328
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 57,
+    "char_start": 64,
+    "char_end": 77,
+    "confidence": 0.9683603048324585,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: первомайский)"
+  },
+  {
+    "text": "Центральный,",
+    "polygon": [
+      [
+        223,
+        1332
+      ],
+      [
+        390,
+        1332
+      ],
+      [
+        390,
+        1363
+      ],
+      [
+        223,
+        1363
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 58,
+    "char_start": 0,
+    "char_end": 12,
+    "confidence": 0.9769424796104431,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Железнодорожный,",
+    "polygon": [
+      [
+        396,
+        1332
+      ],
+      [
+        626,
+        1332
+      ],
+      [
+        626,
+        1363
+      ],
+      [
+        396,
+        1363
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 58,
+    "char_start": 13,
+    "char_end": 29,
+    "confidence": 0.9769424796104431,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: железнодорожный)"
+  },
+  {
+    "text": "Калининский",
+    "polygon": [
+      [
+        633,
+        1332
+      ],
+      [
+        793,
+        1333
+      ],
+      [
+        793,
+        1364
+      ],
+      [
+        633,
+        1363
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 58,
+    "char_start": 30,
+    "char_end": 41,
+    "confidence": 0.9769424796104431,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: калининский)"
+  },
+  {
+    "text": "и",
+    "polygon": [
+      [
+        800,
+        1333
+      ],
+      [
+        814,
+        1333
+      ],
+      [
+        814,
+        1364
+      ],
+      [
+        800,
+        1364
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 58,
+    "char_start": 42,
+    "char_end": 43,
+    "confidence": 0.9769424796104431,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Заельцовский",
+    "polygon": [
+      [
+        821,
+        1333
+      ],
+      [
+        995,
+        1333
+      ],
+      [
+        995,
+        1364
+      ],
+      [
+        821,
+        1364
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 58,
+    "char_start": 44,
+    "char_end": 56,
+    "confidence": 0.9769424796104431,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: заельцовский)"
+  },
+  {
+    "text": "городские",
+    "polygon": [
+      [
+        1002,
+        1333
+      ],
+      [
+        1133,
+        1333
+      ],
+      [
+        1133,
+        1364
+      ],
+      [
+        1002,
+        1364
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 58,
+    "char_start": 57,
+    "char_end": 66,
+    "confidence": 0.9769424796104431,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "районы,",
+    "polygon": [
+      [
+        1140,
+        1333
+      ],
+      [
+        1234,
+        1333
+      ],
+      [
+        1234,
+        1364
+      ],
+      [
+        1140,
+        1364
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 58,
+    "char_start": 67,
+    "char_end": 74,
+    "confidence": 0.9769424796104431,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "и",
+    "polygon": [
+      [
+        1240,
+        1333
+      ],
+      [
+        1255,
+        1333
+      ],
+      [
+        1255,
+        1364
+      ],
+      [
+        1240,
+        1364
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 58,
+    "char_start": 75,
+    "char_end": 76,
+    "confidence": 0.9769424796104431,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "часть",
+    "polygon": [
+      [
+        1261,
+        1333
+      ],
+      [
+        1334,
+        1333
+      ],
+      [
+        1334,
+        1364
+      ],
+      [
+        1261,
+        1364
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 58,
+    "char_start": 77,
+    "char_end": 82,
+    "confidence": 0.9769424796104431,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "прилегающих",
+    "polygon": [
+      [
+        222,
+        1371
+      ],
+      [
+        385,
+        1371
+      ],
+      [
+        386,
+        1401
+      ],
+      [
+        223,
+        1402
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 59,
+    "char_start": 0,
+    "char_end": 11,
+    "confidence": 0.9815770983695984,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "к",
+    "polygon": [
+      [
+        392,
+        1370
+      ],
+      [
+        406,
+        1370
+      ],
+      [
+        407,
+        1401
+      ],
+      [
+        392,
+        1401
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 59,
+    "char_start": 12,
+    "char_end": 13,
+    "confidence": 0.9815770983695984,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "муниципалитету",
+    "polygon": [
+      [
+        413,
+        1370
+      ],
+      [
+        620,
+        1370
+      ],
+      [
+        621,
+        1400
+      ],
+      [
+        414,
+        1401
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 59,
+    "char_start": 14,
+    "char_end": 28,
+    "confidence": 0.9815770983695984,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "областных",
+    "polygon": [
+      [
+        627,
+        1370
+      ],
+      [
+        760,
+        1369
+      ],
+      [
+        761,
+        1400
+      ],
+      [
+        627,
+        1400
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 59,
+    "char_start": 29,
+    "char_end": 38,
+    "confidence": 0.9815770983695984,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "районов).",
+    "polygon": [
+      [
+        767,
+        1369
+      ],
+      [
+        884,
+        1369
+      ],
+      [
+        884,
+        1399
+      ],
+      [
+        767,
+        1400
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 59,
+    "char_start": 39,
+    "char_end": 48,
+    "confidence": 0.9815770983695984,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Данный",
+    "polygon": [
+      [
+        304,
+        1402
+      ],
+      [
+        405,
+        1403
+      ],
+      [
+        405,
+        1437
+      ],
+      [
+        304,
+        1437
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 60,
+    "char_start": 0,
+    "char_end": 6,
+    "confidence": 0.9740492701530457,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "объект",
+    "polygon": [
+      [
+        413,
+        1403
+      ],
+      [
+        514,
+        1403
+      ],
+      [
+        514,
+        1438
+      ],
+      [
+        413,
+        1437
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 60,
+    "char_start": 7,
+    "char_end": 13,
+    "confidence": 0.9740492701530457,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "эксплуатирует",
+    "polygon": [
+      [
+        522,
+        1403
+      ],
+      [
+        741,
+        1405
+      ],
+      [
+        741,
+        1439
+      ],
+      [
+        522,
+        1438
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 60,
+    "char_start": 14,
+    "char_end": 27,
+    "confidence": 0.9740492701530457,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "AОСпецавтохозяйство»",
+    "polygon": [
+      [
+        752,
+        1407
+      ],
+      [
+        1109,
+        1407
+      ],
+      [
+        1109,
+        1437
+      ],
+      [
+        752,
+        1437
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 61,
+    "char_start": 0,
+    "char_end": 20,
+    "confidence": 0.9631571769714355,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "с",
+    "polygon": [
+      [
+        1125,
+        1414
+      ],
+      [
+        1149,
+        1402
+      ],
+      [
+        1161,
+        1426
+      ],
+      [
+        1137,
+        1438
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 62,
+    "char_start": 0,
+    "char_end": 1,
+    "confidence": 0.7356830835342407,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "грубейшими",
+    "polygon": [
+      [
+        1176,
+        1405
+      ],
+      [
+        1341,
+        1402
+      ],
+      [
+        1341,
+        1438
+      ],
+      [
+        1177,
+        1440
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 63,
+    "char_start": 0,
+    "char_end": 10,
+    "confidence": 0.9825668334960938,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "нарушениями",
+    "polygon": [
+      [
+        225,
+        1445
+      ],
+      [
+        381,
+        1445
+      ],
+      [
+        381,
+        1472
+      ],
+      [
+        225,
+        1472
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 64,
+    "char_start": 0,
+    "char_end": 11,
+    "confidence": 0.9815722703933716,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "санитарно-эпидемиологического",
+    "polygon": [
+      [
+        387,
+        1445
+      ],
+      [
+        791,
+        1445
+      ],
+      [
+        791,
+        1472
+      ],
+      [
+        387,
+        1472
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 64,
+    "char_start": 12,
+    "char_end": 41,
+    "confidence": 0.9815722703933716,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "и",
+    "polygon": [
+      [
+        797,
+        1445
+      ],
+      [
+        811,
+        1445
+      ],
+      [
+        811,
+        1472
+      ],
+      [
+        797,
+        1472
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 64,
+    "char_start": 42,
+    "char_end": 43,
+    "confidence": 0.9815722703933716,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "природоохранного",
+    "polygon": [
+      [
+        818,
+        1445
+      ],
+      [
+        1044,
+        1445
+      ],
+      [
+        1044,
+        1472
+      ],
+      [
+        818,
+        1472
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 64,
+    "char_start": 44,
+    "char_end": 60,
+    "confidence": 0.9815722703933716,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "законодательства:",
+    "polygon": [
+      [
+        1051,
+        1445
+      ],
+      [
+        1284,
+        1445
+      ],
+      [
+        1284,
+        1472
+      ],
+      [
+        1051,
+        1472
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 64,
+    "char_start": 61,
+    "char_end": 78,
+    "confidence": 0.9815722703933716,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "1.",
+    "polygon": [
+      [
+        258,
+        1480
+      ],
+      [
+        282,
+        1480
+      ],
+      [
+        282,
+        1505
+      ],
+      [
+        258,
+        1505
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 65,
+    "char_start": 0,
+    "char_end": 2,
+    "confidence": 0.9975866079330444,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Объект",
+    "polygon": [
+      [
+        303,
+        1477
+      ],
+      [
+        393,
+        1477
+      ],
+      [
+        393,
+        1510
+      ],
+      [
+        303,
+        1510
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 66,
+    "char_start": 0,
+    "char_end": 6,
+    "confidence": 0.9832537770271301,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "территориально",
+    "polygon": [
+      [
+        400,
+        1477
+      ],
+      [
+        611,
+        1477
+      ],
+      [
+        611,
+        1510
+      ],
+      [
+        400,
+        1510
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 66,
+    "char_start": 7,
+    "char_end": 21,
+    "confidence": 0.9832537770271301,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "расположен",
+    "polygon": [
+      [
+        618,
+        1477
+      ],
+      [
+        769,
+        1477
+      ],
+      [
+        769,
+        1510
+      ],
+      [
+        618,
+        1510
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 66,
+    "char_start": 22,
+    "char_end": 32,
+    "confidence": 0.9832537770271301,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "внутри",
+    "polygon": [
+      [
+        776,
+        1477
+      ],
+      [
+        866,
+        1477
+      ],
+      [
+        866,
+        1510
+      ],
+      [
+        776,
+        1510
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 66,
+    "char_start": 33,
+    "char_end": 39,
+    "confidence": 0.9832537770271301,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "города",
+    "polygon": [
+      [
+        873,
+        1477
+      ],
+      [
+        963,
+        1477
+      ],
+      [
+        963,
+        1510
+      ],
+      [
+        873,
+        1510
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 66,
+    "char_start": 40,
+    "char_end": 46,
+    "confidence": 0.9832537770271301,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Новосибирска,",
+    "polygon": [
+      [
+        970,
+        1477
+      ],
+      [
+        1158,
+        1477
+      ],
+      [
+        1158,
+        1510
+      ],
+      [
+        970,
+        1510
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 66,
+    "char_start": 47,
+    "char_end": 60,
+    "confidence": 0.9832537770271301,
+    "is_pii": true,
+    "pii_reason": "Natasha NER (LOC: новосибирска)"
+  },
+  {
+    "text": "что",
+    "polygon": [
+      [
+        1164,
+        1477
+      ],
+      [
+        1210,
+        1477
+      ],
+      [
+        1210,
+        1510
+      ],
+      [
+        1164,
+        1510
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 66,
+    "char_start": 61,
+    "char_end": 64,
+    "confidence": 0.9832537770271301,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "нарушает",
+    "polygon": [
+      [
+        1216,
+        1477
+      ],
+      [
+        1337,
+        1477
+      ],
+      [
+        1337,
+        1510
+      ],
+      [
+        1216,
+        1510
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 66,
+    "char_start": 65,
+    "char_end": 73,
+    "confidence": 0.9832537770271301,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Федеральный",
+    "polygon": [
+      [
+        223,
+        1510
+      ],
+      [
+        392,
+        1510
+      ],
+      [
+        392,
+        1543
+      ],
+      [
+        223,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 0,
+    "char_end": 11,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "закон",
+    "polygon": [
+      [
+        399,
+        1510
+      ],
+      [
+        475,
+        1510
+      ],
+      [
+        475,
+        1543
+      ],
+      [
+        399,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 12,
+    "char_end": 17,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "от",
+    "polygon": [
+      [
+        482,
+        1510
+      ],
+      [
+        513,
+        1510
+      ],
+      [
+        513,
+        1543
+      ],
+      [
+        482,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 18,
+    "char_end": 20,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "24.06.1998",
+    "polygon": [
+      [
+        520,
+        1510
+      ],
+      [
+        648,
+        1510
+      ],
+      [
+        648,
+        1543
+      ],
+      [
+        520,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 21,
+    "char_end": 31,
+    "confidence": 0.9761431217193604,
+    "is_pii": true,
+    "pii_reason": "RegEx ((?:с|по)?\\b\\d{2}[\\.\\/]?\\d{2}[\\)"
+  },
+  {
+    "text": "№",
+    "polygon": [
+      [
+        655,
+        1510
+      ],
+      [
+        670,
+        1510
+      ],
+      [
+        670,
+        1543
+      ],
+      [
+        655,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 32,
+    "char_end": 33,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "89-Ф3",
+    "polygon": [
+      [
+        677,
+        1510
+      ],
+      [
+        745,
+        1510
+      ],
+      [
+        745,
+        1543
+      ],
+      [
+        677,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 34,
+    "char_end": 39,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Ст.12.",
+    "polygon": [
+      [
+        752,
+        1510
+      ],
+      [
+        819,
+        1510
+      ],
+      [
+        819,
+        1543
+      ],
+      [
+        752,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 40,
+    "char_end": 46,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "п.5.",
+    "polygon": [
+      [
+        826,
+        1510
+      ],
+      [
+        870,
+        1510
+      ],
+      [
+        870,
+        1543
+      ],
+      [
+        826,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 47,
+    "char_end": 51,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "и",
+    "polygon": [
+      [
+        877,
+        1510
+      ],
+      [
+        892,
+        1510
+      ],
+      [
+        892,
+        1543
+      ],
+      [
+        877,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 52,
+    "char_end": 53,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Федеральный",
+    "polygon": [
+      [
+        899,
+        1510
+      ],
+      [
+        1068,
+        1510
+      ],
+      [
+        1068,
+        1543
+      ],
+      [
+        899,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 54,
+    "char_end": 65,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "закон",
+    "polygon": [
+      [
+        1075,
+        1510
+      ],
+      [
+        1152,
+        1510
+      ],
+      [
+        1152,
+        1543
+      ],
+      [
+        1075,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 66,
+    "char_end": 71,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "от",
+    "polygon": [
+      [
+        1159,
+        1510
+      ],
+      [
+        1189,
+        1510
+      ],
+      [
+        1189,
+        1543
+      ],
+      [
+        1159,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 72,
+    "char_end": 74,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "10.01.2002",
+    "polygon": [
+      [
+        1196,
+        1510
+      ],
+      [
+        1316,
+        1510
+      ],
+      [
+        1316,
+        1543
+      ],
+      [
+        1196,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 75,
+    "char_end": 85,
+    "confidence": 0.9761431217193604,
+    "is_pii": true,
+    "pii_reason": "RegEx ((?:с|по)?\\b\\d{2}[\\.\\/]?\\d{2}[\\)"
+  },
+  {
+    "text": "№",
+    "polygon": [
+      [
+        1323,
+        1510
+      ],
+      [
+        1338,
+        1510
+      ],
+      [
+        1338,
+        1543
+      ],
+      [
+        1323,
+        1543
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 67,
+    "char_start": 86,
+    "char_end": 87,
+    "confidence": 0.9761431217193604,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "7-Ф3.",
+    "polygon": [
+      [
+        224,
+        1546
+      ],
+      [
+        291,
+        1546
+      ],
+      [
+        291,
+        1576
+      ],
+      [
+        223,
+        1576
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 68,
+    "char_start": 0,
+    "char_end": 5,
+    "confidence": 0.8559319376945496,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Сr.",
+    "polygon": [
+      [
+        299,
+        1546
+      ],
+      [
+        341,
+        1546
+      ],
+      [
+        341,
+        1576
+      ],
+      [
+        298,
+        1576
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 68,
+    "char_start": 6,
+    "char_end": 9,
+    "confidence": 0.8559319376945496,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "51.",
+    "polygon": [
+      [
+        349,
+        1546
+      ],
+      [
+        382,
+        1546
+      ],
+      [
+        381,
+        1576
+      ],
+      [
+        348,
+        1576
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 68,
+    "char_start": 10,
+    "char_end": 13,
+    "confidence": 0.8559319376945496,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "П2,",
+    "polygon": [
+      [
+        390,
+        1546
+      ],
+      [
+        432,
+        1547
+      ],
+      [
+        432,
+        1577
+      ],
+      [
+        389,
+        1576
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 68,
+    "char_start": 14,
+    "char_end": 17,
+    "confidence": 0.8559319376945496,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "CП",
+    "polygon": [
+      [
+        440,
+        1547
+      ],
+      [
+        474,
+        1547
+      ],
+      [
+        474,
+        1577
+      ],
+      [
+        439,
+        1577
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 68,
+    "char_start": 18,
+    "char_end": 20,
+    "confidence": 0.8559319376945496,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "42.13330.",
+    "polygon": [
+      [
+        482,
+        1547
+      ],
+      [
+        609,
+        1547
+      ],
+      [
+        609,
+        1577
+      ],
+      [
+        482,
+        1577
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 68,
+    "char_start": 21,
+    "char_end": 30,
+    "confidence": 0.8559319376945496,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "2.",
+    "polygon": [
+      [
+        252,
+        1578
+      ],
+      [
+        276,
+        1578
+      ],
+      [
+        275,
+        1615
+      ],
+      [
+        251,
+        1615
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 69,
+    "char_start": 0,
+    "char_end": 2,
+    "confidence": 0.9883952736854553,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Объект",
+    "polygon": [
+      [
+        284,
+        1578
+      ],
+      [
+        383,
+        1578
+      ],
+      [
+        382,
+        1615
+      ],
+      [
+        283,
+        1615
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 69,
+    "char_start": 3,
+    "char_end": 9,
+    "confidence": 0.9883952736854553,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "не",
+    "polygon": [
+      [
+        391,
+        1578
+      ],
+      [
+        424,
+        1578
+      ],
+      [
+        423,
+        1615
+      ],
+      [
+        390,
+        1615
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 69,
+    "char_start": 10,
+    "char_end": 12,
+    "confidence": 0.9883952736854553,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "имеет",
+    "polygon": [
+      [
+        431,
+        1578
+      ],
+      [
+        514,
+        1579
+      ],
+      [
+        514,
+        1616
+      ],
+      [
+        431,
+        1615
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 69,
+    "char_start": 13,
+    "char_end": 18,
+    "confidence": 0.9883952736854553,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "проектной",
+    "polygon": [
+      [
+        522,
+        1579
+      ],
+      [
+        671,
+        1579
+      ],
+      [
+        671,
+        1616
+      ],
+      [
+        521,
+        1616
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 69,
+    "char_start": 19,
+    "char_end": 28,
+    "confidence": 0.9883952736854553,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "документации,",
+    "polygon": [
+      [
+        679,
+        1579
+      ],
+      [
+        885,
+        1579
+      ],
+      [
+        885,
+        1616
+      ],
+      [
+        678,
+        1616
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 69,
+    "char_start": 29,
+    "char_end": 42,
+    "confidence": 0.9883952736854553,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "государственная",
+    "polygon": [
+      [
+        893,
+        1579
+      ],
+      [
+        1142,
+        1580
+      ],
+      [
+        1142,
+        1617
+      ],
+      [
+        893,
+        1616
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 69,
+    "char_start": 43,
+    "char_end": 58,
+    "confidence": 0.9883952736854553,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "экологическая",
+    "polygon": [
+      [
+        1158,
+        1590
+      ],
+      [
+        1336,
+        1590
+      ],
+      [
+        1336,
+        1611
+      ],
+      [
+        1158,
+        1611
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 70,
+    "char_start": 0,
+    "char_end": 13,
+    "confidence": 0.9467945098876953,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "экспертиза",
+    "polygon": [
+      [
+        226,
+        1623
+      ],
+      [
+        364,
+        1623
+      ],
+      [
+        364,
+        1647
+      ],
+      [
+        226,
+        1647
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 71,
+    "char_start": 0,
+    "char_end": 10,
+    "confidence": 0.982125997543335,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "не",
+    "polygon": [
+      [
+        371,
+        1623
+      ],
+      [
+        398,
+        1623
+      ],
+      [
+        398,
+        1647
+      ],
+      [
+        371,
+        1647
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 71,
+    "char_start": 11,
+    "char_end": 13,
+    "confidence": 0.982125997543335,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "проводилась.",
+    "polygon": [
+      [
+        405,
+        1623
+      ],
+      [
+        563,
+        1623
+      ],
+      [
+        563,
+        1647
+      ],
+      [
+        405,
+        1647
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 71,
+    "char_start": 14,
+    "char_end": 26,
+    "confidence": 0.982125997543335,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "3.",
+    "polygon": [
+      [
+        254,
+        1653
+      ],
+      [
+        279,
+        1653
+      ],
+      [
+        279,
+        1686
+      ],
+      [
+        254,
+        1686
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 72,
+    "char_start": 0,
+    "char_end": 2,
+    "confidence": 0.9420524835586548,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "На",
+    "polygon": [
+      [
+        287,
+        1653
+      ],
+      [
+        322,
+        1653
+      ],
+      [
+        322,
+        1686
+      ],
+      [
+        287,
+        1686
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 72,
+    "char_start": 3,
+    "char_end": 5,
+    "confidence": 0.9420524835586548,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "данный",
+    "polygon": [
+      [
+        330,
+        1653
+      ],
+      [
+        434,
+        1653
+      ],
+      [
+        434,
+        1686
+      ],
+      [
+        330,
+        1686
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 72,
+    "char_start": 6,
+    "char_end": 12,
+    "confidence": 0.9420524835586548,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Объект",
+    "polygon": [
+      [
+        442,
+        1653
+      ],
+      [
+        546,
+        1653
+      ],
+      [
+        546,
+        1686
+      ],
+      [
+        442,
+        1686
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 72,
+    "char_start": 13,
+    "char_end": 19,
+    "confidence": 0.9420524835586548,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "до",
+    "polygon": [
+      [
+        554,
+        1653
+      ],
+      [
+        588,
+        1653
+      ],
+      [
+        588,
+        1686
+      ],
+      [
+        554,
+        1686
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 72,
+    "char_start": 20,
+    "char_end": 22,
+    "confidence": 0.9420524835586548,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "сих",
+    "polygon": [
+      [
+        596,
+        1653
+      ],
+      [
+        648,
+        1653
+      ],
+      [
+        648,
+        1686
+      ],
+      [
+        596,
+        1686
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 72,
+    "char_start": 23,
+    "char_end": 26,
+    "confidence": 0.9420524835586548,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "пор",
+    "polygon": [
+      [
+        656,
+        1653
+      ],
+      [
+        708,
+        1653
+      ],
+      [
+        708,
+        1686
+      ],
+      [
+        656,
+        1686
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 72,
+    "char_start": 27,
+    "char_end": 30,
+    "confidence": 0.9420524835586548,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "ОТСуТСтВУеТ",
+    "polygon": [
+      [
+        716,
+        1653
+      ],
+      [
+        907,
+        1653
+      ],
+      [
+        907,
+        1686
+      ],
+      [
+        716,
+        1686
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 72,
+    "char_start": 31,
+    "char_end": 42,
+    "confidence": 0.9420524835586548,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "комплексное",
+    "polygon": [
+      [
+        915,
+        1653
+      ],
+      [
+        1106,
+        1653
+      ],
+      [
+        1106,
+        1686
+      ],
+      [
+        915,
+        1686
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 72,
+    "char_start": 43,
+    "char_end": 54,
+    "confidence": 0.9420524835586548,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "экологическое",
+    "polygon": [
+      [
+        1114,
+        1653
+      ],
+      [
+        1340,
+        1653
+      ],
+      [
+        1340,
+        1686
+      ],
+      [
+        1114,
+        1686
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 72,
+    "char_start": 55,
+    "char_end": 68,
+    "confidence": 0.9420524835586548,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "разрешение",
+    "polygon": [
+      [
+        223,
+        1691
+      ],
+      [
+        375,
+        1691
+      ],
+      [
+        375,
+        1722
+      ],
+      [
+        223,
+        1722
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 0,
+    "char_end": 10,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "(далее",
+    "polygon": [
+      [
+        382,
+        1691
+      ],
+      [
+        465,
+        1691
+      ],
+      [
+        465,
+        1722
+      ],
+      [
+        382,
+        1722
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 11,
+    "char_end": 17,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "-",
+    "polygon": [
+      [
+        472,
+        1691
+      ],
+      [
+        479,
+        1691
+      ],
+      [
+        479,
+        1722
+      ],
+      [
+        472,
+        1722
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 18,
+    "char_end": 19,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "КЭР),",
+    "polygon": [
+      [
+        486,
+        1691
+      ],
+      [
+        545,
+        1690
+      ],
+      [
+        545,
+        1721
+      ],
+      [
+        486,
+        1722
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 20,
+    "char_end": 25,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "что",
+    "polygon": [
+      [
+        552,
+        1690
+      ],
+      [
+        597,
+        1690
+      ],
+      [
+        597,
+        1721
+      ],
+      [
+        552,
+        1721
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 26,
+    "char_end": 29,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "нарушает",
+    "polygon": [
+      [
+        604,
+        1690
+      ],
+      [
+        726,
+        1690
+      ],
+      [
+        726,
+        1721
+      ],
+      [
+        604,
+        1721
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 30,
+    "char_end": 38,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Федеральный",
+    "polygon": [
+      [
+        733,
+        1690
+      ],
+      [
+        900,
+        1690
+      ],
+      [
+        900,
+        1721
+      ],
+      [
+        733,
+        1721
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 39,
+    "char_end": 50,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "закон",
+    "polygon": [
+      [
+        907,
+        1690
+      ],
+      [
+        983,
+        1690
+      ],
+      [
+        983,
+        1721
+      ],
+      [
+        907,
+        1721
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 51,
+    "char_end": 56,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "от",
+    "polygon": [
+      [
+        990,
+        1690
+      ],
+      [
+        1021,
+        1690
+      ],
+      [
+        1021,
+        1721
+      ],
+      [
+        990,
+        1721
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 57,
+    "char_end": 59,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "10.01.2002",
+    "polygon": [
+      [
+        1028,
+        1690
+      ],
+      [
+        1146,
+        1689
+      ],
+      [
+        1146,
+        1720
+      ],
+      [
+        1028,
+        1721
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 60,
+    "char_end": 70,
+    "confidence": 0.9641557335853577,
+    "is_pii": true,
+    "pii_reason": "RegEx ((?:с|по)?\\b\\d{2}[\\.\\/]?\\d{2}[\\)"
+  },
+  {
+    "text": "№",
+    "polygon": [
+      [
+        1153,
+        1689
+      ],
+      [
+        1168,
+        1689
+      ],
+      [
+        1168,
+        1720
+      ],
+      [
+        1153,
+        1720
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 71,
+    "char_end": 72,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "7-Ф3,",
+    "polygon": [
+      [
+        1175,
+        1689
+      ],
+      [
+        1235,
+        1689
+      ],
+      [
+        1235,
+        1720
+      ],
+      [
+        1175,
+        1720
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 73,
+    "char_end": 78,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Ст.",
+    "polygon": [
+      [
+        1241,
+        1689
+      ],
+      [
+        1279,
+        1689
+      ],
+      [
+        1279,
+        1720
+      ],
+      [
+        1241,
+        1720
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 79,
+    "char_end": 82,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "31.1.,",
+    "polygon": [
+      [
+        1286,
+        1689
+      ],
+      [
+        1335,
+        1689
+      ],
+      [
+        1335,
+        1720
+      ],
+      [
+        1286,
+        1720
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 73,
+    "char_start": 83,
+    "char_end": 89,
+    "confidence": 0.9641557335853577,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": ".1",
+    "polygon": [
+      [
+        223,
+        1724
+      ],
+      [
+        238,
+        1724
+      ],
+      [
+        237,
+        1754
+      ],
+      [
+        222,
+        1754
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 74,
+    "char_start": 0,
+    "char_end": 2,
+    "confidence": 0.9465420842170715,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "-",
+    "polygon": [
+      [
+        245,
+        1724
+      ],
+      [
+        252,
+        1724
+      ],
+      [
+        251,
+        1754
+      ],
+      [
+        244,
+        1754
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 74,
+    "char_start": 3,
+    "char_end": 4,
+    "confidence": 0.9465420842170715,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "объект",
+    "polygon": [
+      [
+        259,
+        1724
+      ],
+      [
+        356,
+        1725
+      ],
+      [
+        355,
+        1756
+      ],
+      [
+        258,
+        1754
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 74,
+    "char_start": 5,
+    "char_end": 11,
+    "confidence": 0.9465420842170715,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "I",
+    "polygon": [
+      [
+        363,
+        1725
+      ],
+      [
+        370,
+        1725
+      ],
+      [
+        370,
+        1756
+      ],
+      [
+        363,
+        1756
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 74,
+    "char_start": 12,
+    "char_end": 13,
+    "confidence": 0.9465420842170715,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "категории.",
+    "polygon": [
+      [
+        378,
+        1726
+      ],
+      [
+        530,
+        1727
+      ],
+      [
+        530,
+        1758
+      ],
+      [
+        377,
+        1756
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 74,
+    "char_start": 14,
+    "char_end": 24,
+    "confidence": 0.9465420842170715,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "4.",
+    "polygon": [
+      [
+        253,
+        1758
+      ],
+      [
+        276,
+        1758
+      ],
+      [
+        275,
+        1789
+      ],
+      [
+        252,
+        1789
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 75,
+    "char_start": 0,
+    "char_end": 2,
+    "confidence": 0.9761338829994202,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Объект",
+    "polygon": [
+      [
+        284,
+        1758
+      ],
+      [
+        380,
+        1759
+      ],
+      [
+        379,
+        1790
+      ],
+      [
+        283,
+        1789
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 75,
+    "char_start": 3,
+    "char_end": 9,
+    "confidence": 0.9761338829994202,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "не",
+    "polygon": [
+      [
+        387,
+        1759
+      ],
+      [
+        419,
+        1759
+      ],
+      [
+        418,
+        1790
+      ],
+      [
+        386,
+        1790
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 75,
+    "char_start": 10,
+    "char_end": 12,
+    "confidence": 0.9761338829994202,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "имеет",
+    "polygon": [
+      [
+        426,
+        1759
+      ],
+      [
+        507,
+        1760
+      ],
+      [
+        506,
+        1791
+      ],
+      [
+        426,
+        1790
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 75,
+    "char_start": 13,
+    "char_end": 18,
+    "confidence": 0.9761338829994202,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Санитарно-эпидемиологического",
+    "polygon": [
+      [
+        514,
+        1760
+      ],
+      [
+        971,
+        1763
+      ],
+      [
+        971,
+        1794
+      ],
+      [
+        513,
+        1791
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 75,
+    "char_start": 19,
+    "char_end": 48,
+    "confidence": 0.9761338829994202,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "заключения,",
+    "polygon": [
+      [
+        978,
+        1763
+      ],
+      [
+        1146,
+        1764
+      ],
+      [
+        1146,
+        1796
+      ],
+      [
+        978,
+        1794
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 75,
+    "char_start": 49,
+    "char_end": 60,
+    "confidence": 0.9761338829994202,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "что",
+    "polygon": [
+      [
+        1153,
+        1764
+      ],
+      [
+        1201,
+        1764
+      ],
+      [
+        1201,
+        1796
+      ],
+      [
+        1153,
+        1796
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 75,
+    "char_start": 61,
+    "char_end": 64,
+    "confidence": 0.9761338829994202,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "нарушает",
+    "polygon": [
+      [
+        1209,
+        1764
+      ],
+      [
+        1337,
+        1765
+      ],
+      [
+        1337,
+        1797
+      ],
+      [
+        1208,
+        1796
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 75,
+    "char_start": 65,
+    "char_end": 73,
+    "confidence": 0.9761338829994202,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "СанПиН",
+    "polygon": [
+      [
+        225,
+        1793
+      ],
+      [
+        328,
+        1794
+      ],
+      [
+        327,
+        1823
+      ],
+      [
+        224,
+        1822
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 76,
+    "char_start": 0,
+    "char_end": 6,
+    "confidence": 0.9374209046363831,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "2.1.3684-21.",
+    "polygon": [
+      [
+        336,
+        1794
+      ],
+      [
+        485,
+        1796
+      ],
+      [
+        485,
+        1824
+      ],
+      [
+        335,
+        1823
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 76,
+    "char_start": 7,
+    "char_end": 19,
+    "confidence": 0.9374209046363831,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "Cmfr",
+    "polygon": [
+      [
+        1101,
+        1875
+      ],
+      [
+        1255,
+        1865
+      ],
+      [
+        1260,
+        1950
+      ],
+      [
+        1106,
+        1960
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 77,
+    "char_start": 0,
+    "char_end": 4,
+    "confidence": 0.8411140441894531,
+    "is_pii": false,
+    "pii_reason": null
+  },
+  {
+    "text": "1u6",
+    "polygon": [
+      [
+        1271,
+        1864
+      ],
+      [
+        1358,
+        1859
+      ],
+      [
+        1363,
+        1944
+      ],
+      [
+        1276,
+        1949
+      ]
+    ],
+    "page_num": 4,
+    "line_idx": 77,
+    "char_start": 5,
+    "char_end": 8,
+    "confidence": 0.8411140441894531,
+    "is_pii": false,
+    "pii_reason": null
+  }
+]

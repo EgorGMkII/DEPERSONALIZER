@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depersonalizer — Анонимизатор PDF документов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --primary-accent: #6366f1;
+      --primary-hover: #4f46e5;
+      --success-accent: #10b981;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .container.has-preview {
+        grid-template-columns: 420px 1fr;
+      }
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Dropzone Styling */
+    .dropzone {
+      border: 2px dashed rgba(99, 102, 241, 0.4);
+      border-radius: 12px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    .dropzone:hover, .dropzone.dragover {
+      border-color: var(--primary-accent);
+      background: rgba(99, 102, 241, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .dropzone icon {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .dropzone p {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .dropzone span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    #fileInput {
+      display: none;
+    }
+
+    /* Progress & Status */
+    .status-box {
+      margin-top: 1.5rem;
+      display: none;
+      text-align: center;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top-color: var(--primary-accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Action Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.85rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-accent) 0%, var(--primary-hover) 100%);
+      color: white;
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 12px 25px rgba(99, 102, 241, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn-success {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+      margin-top: 1rem;
+    }
+
+    .btn-success:hover {
+      box-shadow: 0 12px 25px rgba(16, 185, 129, 0.5);
+      transform: translateY(-1px);
+    }
+
+    /* Badge & Info */
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      margin-top: 0.5rem;
+    }
+
+    /* PDF Scrollable Preview Box */
+    .preview-card {
+      display: none;
+      flex-direction: column;
+      height: 750px;
+    }
+
+    .preview-card.active {
+      display: flex;
+    }
+
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .preview-header h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .pdf-viewer-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+      background: #334155;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Depersonalizer PII</h1>
+    <p>Автоматическая анонимизация и закрашивание ПДн на сканах PDF</p>
+  </header>
+
+  <div class="container" id="mainContainer">
+    <!-- Upload Panel -->
+    <div class="glass-card">
+      <div class="dropzone" id="dropzone">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 1rem auto; display:block;">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="17 8 12 3 7 8"></polyline>
+          <line x1="12" y1="3" x2="12" y2="15"></line>
+        </svg>
+        <p id="dropzoneText">Перетащите PDF сюда или нажмите для выбора</p>
+        <span>Поддерживаются файлы PDF любого формата</span>
+        <input type="file" id="fileInput" accept="application/pdf">
+      </div>
+
+      <div class="status-box" id="statusBox">
+        <div class="spinner" id="spinner"></div>
+        <p id="statusText">Загрузка файла...</p>
+        <div id="badgeContainer"></div>
+        <a id="downloadBtn" class="btn btn-success" style="display:none;" download>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Скачать зацензуренный PDF
+        </a>
+      </div>
+    </div>
+
+    <!-- Scrollable PDF Preview Card -->
+    <div class="glass-card preview-card" id="previewCard">
+      <div class="preview-header">
+        <h2>Зацензуренный PDF (Просмотр)</h2>
+        <span id="pageCountText" style="font-size:0.85rem; color:var(--text-muted);"></span>
+      </div>
+      <iframe id="pdfViewer" class="pdf-viewer-frame"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('fileInput');
+    const dropzoneText = document.getElementById('dropzoneText');
+    const statusBox = document.getElementById('statusBox');
+    const spinner = document.getElementById('spinner');
+    const statusText = document.getElementById('statusText');
+    const badgeContainer = document.getElementById('badgeContainer');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const mainContainer = document.getElementById('mainContainer');
+    const previewCard = document.getElementById('previewCard');
+    const pdfViewer = document.getElementById('pdfViewer');
+
+    let currentJobId = null;
+    let pollInterval = null;
+
+    dropzone.addEventListener('click', () => fileInput.click());
+    dropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropzone.classList.add('dragover');
+    });
+    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('dragover');
+      if (e.dataTransfer.files.length) {
+        handleFile(e.dataTransfer.files[0]);
+      }
+    });
+
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files.length) {
+        handleFile(fileInput.files[0]);
+      }
+    });
+
+    async function handleFile(file) {
+      if (!file.name.toLowerCase().endsWith('.pdf')) {
+        alert('Пожалуйста, выберите файл с расширением .pdf');
+        return;
+      }
+
+      dropzoneText.textContent = file.name;
+      statusBox.style.display = 'block';
+      spinner.style.display = 'block';
+      statusText.textContent = 'Отправка файла на обработку...';
+      downloadBtn.style.display = 'none';
+      badgeContainer.innerHTML = '';
+      previewCard.classList.remove('active');
+      mainContainer.classList.remove('has-preview');
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      try {
+        const response = await fetch('/api/v1/anonymize', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error('Ошибка отправки файла на сервер');
+        }
+
+        const data = await response.json();
+        currentJobId = data.job_id;
+        statusText.textContent = 'Обработка и маскирование ПДн...';
+        startPolling(currentJobId);
+
+      } catch (err) {
+        spinner.style.display = 'none';
+        statusText.textContent = 'Ошибка: ' + err.message;
+      }
+    }
+
+    function startPolling(jobId) {
+      if (pollInterval) clearInterval(pollInterval);
+
+      pollInterval = setInterval(async () => {
+        try {
+          const res = await fetch(`/api/v1/jobs/${jobId}`);
+          if (!res.ok) return;
+
+          const data = await res.json();
+
+          if (data.status === 'completed') {
+            clearInterval(pollInterval);
+            spinner.style.display = 'none';
+            statusText.textContent = 'Анонимизация успешно завершена!';
+            
+            badgeContainer.innerHTML = `<span class="badge">Закрашено токенов ПДн: ${data.masked_tokens_count}</span>`;
+            
+            const downloadUrl = `/api/v1/jobs/${jobId}/download`;
+            downloadBtn.href = downloadUrl;
+            downloadBtn.style.display = 'inline-flex';
+
+            // Show scrollable PDF preview
+            pdfViewer.src = downloadUrl;
+            previewCard.classList.add('active');
+            mainContainer.classList.add('has-preview');
+
+          } else if (data.status === 'failed') {
+            clearInterval(pollInterval);
+            spinner.style.display = 'none';
+            statusText.textContent = 'Ошибка обработки: ' + (data.error || 'Неизвестный сбой');
+          } else {
+            statusText.textContent = 'Выполняется распознавание и цензурирование (PaddleOCR + Natasha)...';
+          }
+
+        } catch (err) {
+          console.error(err);
+        }
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

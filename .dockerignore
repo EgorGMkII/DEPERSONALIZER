@@ -1,0 +1,15 @@
+.git
+.gitignore
+AGENTS.md
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+debug_output/
+jobs_data/
+*.pdf
+*.png
+*.jpg
+.ipynb_checkpoints
+test.ipynb

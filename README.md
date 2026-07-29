@@ -1,43 +1,69 @@
-# Depersonalizer (PII Redactor)
+# Depersonalizer — Local PDF/Scan Anonymizer (PII Redactor)
 
-Local Python tool for automated PII (Personally Identifiable Information) detection and redaction on scanned PDF documents and image scans.
+Local Python service and CLI tool for detecting and masking Personal Identifiable Information (PII) on Russian scanned PDF documents using **PaddleOCR**, **Natasha NER**, **RegEx**, and **Pillow**.
+
+Maintains **100% original page layout and graphics** by drawing targeted black mask polygons over PII text directly on page images.
+
+---
 
 ## Features
-- **Layout Preservation**: Redacts text using direct image polygon masking, preserving 100% of original document layout and graphics.
-- **Word-Level Precision**: Proportional word-level bounding box splitting ensures only sensitive target words are masked, leaving clean text untouched.
-- **Multi-Stage Detection**: Combines PaddleOCR text extraction, Natasha NER (PER/LOC), and specialized RegEx patterns for passports, phones, INN, emails, dates, and Russian names.
-- **3-Stage Debug Output**: Generates stage-by-stage visual artifacts (`debug_output/`) for complete transparency and verification.
+- **Hierarchical 2-Level Pipeline (`LineContainer` -> `Token`)**: Preserves full line/sentence context for NER while applying exact word-level bounding box masks.
+- **Natasha NER & RegEx Detection**: Detects Surnames, Names, Passports, SNILS, INN/OGRN, Emails, Dates, IPv4 Addresses, Local Phone Numbers, and Structured Postal Addresses.
+- **Institution Header Safeguards**: Protects official state organ headers from false positive redaction.
+- **POS Tagging Protection**: Protects verbs, prepositions, and conjunctions from accidental RegEx over-matching.
+- **OCR Low-Confidence Thresholding (`confidence < 0.68`)**: Automatically masks handwritten text blocks and signatures without complex table parsing.
+- **FastAPI Service**: Async REST API with background task execution (`fastapi.BackgroundTasks`) and job status polling.
+- **Interactive Web UI**: Modern dark glassmorphism interface with drag & drop upload, progress spinner, live polling, scrollable PDF preview, and one-click download.
+- **Docker & Docker Compose**: Full containerization support with system dependencies (`poppler-utils`, OpenGL) and model caching.
 
-## Requirements
-- Python >= 3.10
-- Conda environment recommended
-- Dependencies: `paddleocr`, `natasha`, `pdf2image`, `Pillow`, `numpy`, `PyMuPDF`
+---
 
-## Usage
+## Docker Deployment (Recommended)
 
-Run PDF anonymization from the command line:
-
+### Using Docker Compose
 ```bash
-python redact.py --input input.pdf --output anonymized.pdf --dpi 170 --debug-dir debug_output --verbose
+docker-compose up --build -d
+```
+Open `http://localhost:8000/` in your browser.
+
+### Using Docker Directly
+```bash
+docker build -t depersonalizer .
+docker run -d -p 8000:8000 --name depersonalizer-container depersonalizer
 ```
 
-### Command Line Options
-- `--input`, `-i`: Path to input PDF file (required).
-- `--output`, `-o`: Path to save output anonymized PDF file (required).
-- `--dpi`: DPI for PDF page rasterization (default: `170`).
-- `--padding`: Pixel padding for black polygon mask expansion (default: `2`).
-- `--max-pages`, `-p`: Limit processing to first N pages.
-- `--debug-dir`: Directory path to save 3-stage intermediate debug artifacts (`01_ocr_raw.png`, `02_pii_highlight.png`, `02_pii_tokens.json`, `03_masked_page.png`).
-- `--verbose`, `-v`: Print detailed PII detection log output.
+---
 
-## Architecture
+## Local Installation & Launch
 
-```text
-Depersonalizer/
-├── redact.py                  # Main CLI entry point
-└── src/
-    ├── config.py              # Data structures (Token) and RegEx patterns
-    ├── ocr.py                 # Stage 1: PaddleOCR extraction + Word BBox splitting
-    ├── pii.py                 # Stage 2: Natasha NER + RegEx PII classification
-    └── masker.py              # Stage 3: Pillow polygon masking & PDF export
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Launch FastAPI Server & Web UI
+```bash
+uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+```
+
+---
+
+## REST API Endpoints
+- **`GET /health`**: Health check & ML model initialization status.
+- **`POST /api/v1/anonymize`**: Upload a PDF file (`multipart/form-data`) -> Returns `{"job_id": "...", "status": "pending"}`.
+- **`GET /api/v1/jobs/{job_id}`**: Poll job status (`pending`, `processing`, `completed`, `failed`) and masked token count.
+- **`GET /api/v1/jobs/{job_id}/download`**: Download anonymized PDF file.
+
+---
+
+## CLI Usage
+
+### Basic Anonymization Command
+```bash
+python redact.py --input input.pdf --output anonymized.pdf
+```
+
+### Advanced Multi-Page Command
+```bash
+python redact.py --input input.pdf --output anonymized.pdf --dpi 170 --debug-dir debug_output --verbose
 ```

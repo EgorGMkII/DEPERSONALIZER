@@ -4,7 +4,7 @@ Operates on 2-level LineContainers and child Word Tokens.
 """
 
 import os
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 from PIL import Image, ImageDraw
 from .config import Token, LineContainer
 
@@ -33,8 +33,14 @@ def expand_polygon(poly: List[List[int]], padding_px: int) -> List[Tuple[int, in
 
 
 class PageMasker:
-    def mask_page(self, image: Image.Image, lines: List[LineContainer], padding_px: int = 2) -> Image.Image:
+    def __init__(self, padding_px: int = 2):
+        self.padding_px = padding_px
+
+    def mask_page(self, image: Image.Image, lines: List[LineContainer], padding_px: Optional[int] = None) -> Image.Image:
         """Draws black polygons over child Word Tokens marked as PII."""
+        if padding_px is None:
+            padding_px = self.padding_px
+
         masked_img = image.copy()
         draw = ImageDraw.Draw(masked_img)
 

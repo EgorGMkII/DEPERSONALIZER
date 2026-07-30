@@ -374,7 +374,7 @@
             downloadBtn.style.display = 'inline-flex';
 
             // Show scrollable PDF preview
-            pdfViewer.src = downloadUrl;
+            pdfViewer.src = `/api/v1/jobs/${jobId}/preview`;
             previewCard.classList.add('active');
             mainContainer.classList.add('has-preview');
 
@@ -382,8 +382,10 @@
             clearInterval(pollInterval);
             spinner.style.display = 'none';
             statusText.textContent = 'Ошибка обработки: ' + (data.error || 'Неизвестный сбой');
+          } else if (data.status === 'processing' && data.total_pages > 0) {
+            statusText.textContent = `Обработка страницы ${data.current_page} из ${data.total_pages} (${data.percent}%)...`;
           } else {
-            statusText.textContent = 'Выполняется распознавание и цензурирование (PaddleOCR + Natasha)...';
+            statusText.textContent = 'Задача ожидает запуска OCR-воркером...';
           }
 
         } catch (err) {

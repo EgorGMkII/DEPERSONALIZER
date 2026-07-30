@@ -5,9 +5,13 @@ FROM python:3.10-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV DEBIAN_FRONTEND=noninteractive
-ENV OMP_NUM_THREADS=4
-ENV MKL_NUM_THREADS=4
-ENV OPENBLAS_NUM_THREADS=4
+ENV OMP_NUM_THREADS=1
+ENV MKL_NUM_THREADS=1
+ENV OPENBLAS_NUM_THREADS=1
+ENV NUMEXPR_NUM_THREADS=1
+ENV PADDLE_CPU_THREADS=4
+ENV PADDLE_ENABLE_MKLDNN=0
+ENV MALLOC_ARENA_MAX=2
 
 # Install required Linux system packages (poppler for pdf2image, libgl1/libglx-mesa0/libgomp1 for OpenCV & PaddleOCR)
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -34,7 +38,7 @@ COPY static/ ./static/
 COPY app.py redact.py clean_pdf.py README.md ./
 
 # Create jobs storage directory
-RUN mkdir -p jobs_data debug_output
+RUN mkdir -p /app/jobs_data /app/debug_output
 
 # Expose FastAPI port
 EXPOSE 8000

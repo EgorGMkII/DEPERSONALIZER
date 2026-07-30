@@ -1,107 +1,82 @@
-"""
-Job Management & Background Task Services for Depersonalizer Web Module.
-"""
+"""Lightweight job storage shared by the API and the Celery worker."""
 
-import os
 import json
-import shutil
-from typing import Dict, Any, List
-from pdf2image import convert_from_path
-from PIL import Image
+import os
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+from uuid import UUID
 
-from src.ocr import OCRProcessor
-from src.pii import PIIDetector
-from src.masker import PageMasker
-from clean_pdf import clean_pdf
-
-# Storage directory for web jobs
-JOBS_DIR = "jobs_data"
-os.makedirs(JOBS_DIR, exist_ok=True)
-JOBS_JSON = os.path.join(JOBS_DIR, "jobs.json")
+from redis import Redis
 
 
-def load_jobs_db() -> Dict[str, Dict[str, Any]]:
-    """Loads jobs database from persistent JSON file."""
-    if os.path.exists(JOBS_JSON):
-        try:
-            with open(JOBS_JSON, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception:
-            pass
-    return {}
+JOBS_DIR = Path(os.getenv("JOB_ROOT", "jobs_data")).resolve()
+JOBS_DIR.mkdir(parents=True, exist_ok=True)
+REDIS_URL = os.getenv("REDIS_URL", "redis://redis:6379/0")
+JOB_TTL_SECONDS = int(os.getenv("JOB_TTL_SECONDS", "86400"))
+
+_redis = Redis.from_url(REDIS_URL, decode_responses=True)
 
 
-def save_jobs_db() -> None:
-    """Saves jobs database to persistent JSON file."""
+@dataclass(frozen=True)
+class JobPaths:
+    root: Path
+    input_pdf: Path
+    clean_pdf: Path
+    output_pdf: Path
+    output_tmp_pdf: Path
+    work_dir: Path
+
+
+def normalize_job_id(job_id: str) -> str:
+    """Accept only canonical UUIDs before constructing filesystem paths."""
     try:
-        with open(JOBS_JSON, "w", encoding="utf-8") as f:
-            json.dump(jobs_db, f, ensure_ascii=False, indent=2)
+        return str(UUID(job_id))
+    except (ValueError, TypeError, AttributeError) as exc:
+        raise ValueError("Invalid job id") from exc
+
+
+def get_job_paths(job_id: str, create: bool = False) -> JobPaths:
+    job_id = normalize_job_id(job_id)
+    root = JOBS_DIR / job_id
+    if create:
+        root.mkdir(parents=True, exist_ok=True)
+
+    return JobPaths(
+        root=root,
+        input_pdf=root / "input.pdf",
+        clean_pdf=root / "clean.pdf",
+        output_pdf=root / "anonymized.pdf",
+        output_tmp_pdf=root / "anonymized.tmp.pdf",
+        work_dir=root / "work",
+    )
+
+
+def _job_key(job_id: str) -> str:
+    return f"depersonalizer:job:{normalize_job_id(job_id)}"
+
+
+def save_job(job_id: str, **fields: Any) -> dict[str, Any]:
+    """Merge and atomically replace a compact JSON job record in Redis."""
+    current = get_job(job_id) or {"job_id": normalize_job_id(job_id)}
+    current.update(fields)
+    current["updated_at"] = datetime.now(timezone.utc).isoformat()
+
+    key = _job_key(job_id)
+    _redis.set(key, json.dumps(current, ensure_ascii=False), ex=JOB_TTL_SECONDS)
+    return current
+
+
+def get_job(job_id: str) -> dict[str, Any] | None:
+    raw = _redis.get(_job_key(job_id))
+    if raw is None:
+        return None
+    return json.loads(raw)
+
+
+def redis_is_ready() -> bool:
+    try:
+        return bool(_redis.ping())
     except Exception:
-        pass
-
-
-# Persistent database of anonymization jobs
-jobs_db: Dict[str, Dict[str, Any]] = load_jobs_db()
-
-
-def execute_anonymization_job(
-    job_id: str,
-    input_pdf_path: str,
-    output_pdf_path: str,
-    ocr_processor: OCRProcessor,
-    pii_detector: PIIDetector,
-    page_masker: PageMasker,
-    dpi: int = 170
-) -> None:
-    """Executes full PDF anonymization pipeline in a background task."""
-    try:
-        jobs_db[job_id]["status"] = "processing"
-        save_jobs_db()
-
-        # 1. Clean PDF annotations
-        clean_pdf_path = os.path.join(JOBS_DIR, f"{job_id}_clean.pdf")
-        clean_pdf(input_pdf_path, clean_pdf_path)
-
-        # 2. Convert PDF to PIL Images
-        images = convert_from_path(clean_pdf_path, dpi=dpi)
-        if not images:
-            raise ValueError(f"No images extracted from PDF '{input_pdf_path}'.")
-
-        print(f"Starting Web Job '{job_id}' ({len(images)} page(s))...")
-        masked_images: List[Image.Image] = []
-        total_masked_tokens = 0
-
-        for page_idx, img in enumerate(images, start=1):
-            print(f"[{job_id[:8]}] Page {page_idx}/{len(images)}: Running OCR (PaddleOCR)...")
-            lines = ocr_processor.process_ocr_page(img, page_idx, verbose=False)
-
-            print(f"[{job_id[:8]}] Page {page_idx}/{len(images)}: Running PII Detection (Natasha + RegEx)...")
-            pii_detector.detect_pii(lines)
-
-            # Count masked tokens
-            page_masked = sum(1 for line in lines for w in line.words if w.is_pii)
-            total_masked_tokens += page_masked
-
-            # Stage 3: Masking
-            masked_img = page_masker.mask_page(img, lines)
-            masked_images.append(masked_img)
-            print(f"[{job_id[:8]}] Page {page_idx}/{len(images)} complete ({page_masked} PII tokens masked).")
-
-        # 3. Save anonymized multi-page PDF
-        if masked_images:
-            masked_images[0].save(
-                output_pdf_path,
-                save_all=True,
-                append_images=masked_images[1:]
-            )
-
-        jobs_db[job_id]["status"] = "completed"
-        jobs_db[job_id]["masked_tokens_count"] = total_masked_tokens
-        save_jobs_db()
-        print(f"Web Job '{job_id}' completed successfully! Total masked tokens: {total_masked_tokens}")
-
-    except Exception as e:
-        print(f"Error processing Web Job '{job_id}': {e}")
-        jobs_db[job_id]["status"] = "failed"
-        jobs_db[job_id]["error"] = str(e)
-        save_jobs_db()
+        return False

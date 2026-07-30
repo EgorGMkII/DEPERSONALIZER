@@ -22,6 +22,7 @@ def clean_pdf(input_path: str, output_path: str) -> None:
             print(f"Removed {len(annots)} annotation(s) on page {page_idx}")
 
     doc.save(output_path)
+    doc.close()
     print(f"Saved cleaned PDF to '{output_path}'.")
 
 

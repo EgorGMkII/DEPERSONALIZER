@@ -1,21 +1,77 @@
-version: '3.8'
-
 services:
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
   depersonalizer:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: depersonalizer-service
+    command: uvicorn app:app --host 0.0.0.0 --port 8000
+    init: true
     ports:
       - "8000:8000"
     volumes:
-      # Persist anonymization jobs and outputs
       - ./jobs_data:/app/jobs_data
-      # Cache downloaded PaddleOCR models to prevent redownloading
       - paddle_models_cache:/root/.paddlex
     environment:
-      - PYTHONUNBUFFERED=1
+      PYTHONUNBUFFERED: "1"
+      REDIS_URL: redis://redis:6379/0
+      JOB_ROOT: /app/jobs_data
+      MAX_UPLOAD_BYTES: "104857600"
+      JOB_TTL_SECONDS: "86400"
+    depends_on:
+      redis:
+        condition: service_healthy
     restart: unless-stopped
 
+  celery_worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+      - celery
+      - -A
+      - web.celery_app:celery_app
+      - worker
+      - --loglevel=info
+      - --pool=solo
+      - --concurrency=1
+      - --prefetch-multiplier=1
+    init: true
+    shm_size: 1gb
+    stop_grace_period: 2m
+    volumes:
+      - ./jobs_data:/app/jobs_data
+      - paddle_models_cache:/root/.paddlex
+    environment:
+      PYTHONUNBUFFERED: "1"
+      REDIS_URL: redis://redis:6379/0
+      JOB_ROOT: /app/jobs_data
+      JOB_TTL_SECONDS: "86400"
+      VISIBILITY_TIMEOUT_SECONDS: "21600"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      NUMEXPR_NUM_THREADS: "1"
+      PADDLE_CPU_THREADS: "4"
+      PADDLE_ENABLE_MKLDNN: "0"
+      MALLOC_ARENA_MAX: "2"
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      disable: true
+    restart: "no"
+
 volumes:
+  redis_data:
   paddle_models_cache:

@@ -1,8 +1,7 @@
-"""
-Pydantic Schemas for Depersonalizer Web Module.
-"""
+"""Pydantic response schemas for the web API."""
 
 from typing import Optional
+
 from pydantic import BaseModel
 
 
@@ -15,10 +14,13 @@ class AnonymizeResponse(BaseModel):
 class JobStatusResponse(BaseModel):
     job_id: str
     status: str
-    masked_tokens_count: Optional[int] = 0
+    current_page: int = 0
+    total_pages: int = 0
+    percent: int = 0
+    masked_tokens_count: int = 0
     error: Optional[str] = None
 
 
 class HealthResponse(BaseModel):
     status: str
-    models_loaded: bool
+    redis_ready: bool

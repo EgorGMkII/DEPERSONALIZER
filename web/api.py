@@ -1,150 +1,169 @@
-"""
-FastAPI Web Module Entry Point & API Endpoints for Depersonalizer.
-Serves static UI frontend at root '/' and REST API endpoints under '/api/v1/'.
-"""
+"""FastAPI endpoints. This module intentionally never imports OCR models."""
 
 import os
-import uuid
-import shutil
 from contextlib import asynccontextmanager
+from pathlib import Path
+from uuid import uuid4
 
-from fastapi import FastAPI, UploadFile, File, BackgroundTasks, HTTPException
+from fastapi import FastAPI, File, HTTPException, UploadFile, status
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from src.ocr import OCRProcessor
-from src.pii import PIIDetector
-from src.masker import PageMasker
+from .celery_app import celery_app
+from .schemas import AnonymizeResponse, HealthResponse, JobStatusResponse
+from .services import get_job, get_job_paths, redis_is_ready, save_job
 
-from .schemas import AnonymizeResponse, JobStatusResponse, HealthResponse
-from .services import JOBS_DIR, jobs_db, save_jobs_db, execute_anonymization_job
 
-STATIC_DIR = "static"
+STATIC_DIR = Path(os.getenv("STATIC_DIR", "static"))
+MAX_UPLOAD_BYTES = int(os.getenv("MAX_UPLOAD_BYTES", str(100 * 1024 * 1024)))
+UPLOAD_CHUNK_BYTES = 1024 * 1024
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
-    """Lifespan context manager: Preloads ML models once globally on web server startup."""
-    print("Preloading ML models globally for Web Module (PaddleOCR & Natasha)...")
-    app.state.ocr_processor = OCRProcessor()
-    app.state.pii_detector = PIIDetector()
-    app.state.page_masker = PageMasker(padding_px=2)
-    print("ML models successfully initialized. Web Service ready!")
+async def lifespan(_: FastAPI):
     yield
-    print("Shutting down Web Service...")
 
 
 app = FastAPI(
     title="Depersonalizer PII Redactor Web API",
-    description="Decoupled Web Module for local PDF PII Anonymization",
-    version="1.0.0",
-    lifespan=lifespan
+    description="Background PDF anonymization service",
+    version="2.0.0",
+    lifespan=lifespan,
 )
 
 
 @app.get("/health", response_model=HealthResponse, summary="Health Check")
-def health_check():
-    """Returns service health status and model initialization readiness."""
-    ready = hasattr(app.state, "ocr_processor") and hasattr(app.state, "pii_detector")
-    return HealthResponse(
-        status="healthy" if ready else "initializing",
-        models_loaded=ready
-    )
+def health_check() -> HealthResponse:
+    ready = redis_is_ready()
+    return HealthResponse(status="healthy" if ready else "degraded", redis_ready=ready)
 
 
-@app.post("/api/v1/anonymize", response_model=AnonymizeResponse, summary="Submit PDF for PII Anonymization")
-async def submit_anonymization(background_tasks: BackgroundTasks, file: UploadFile = File(...)):
-    """Uploads a PDF file and starts background anonymization job."""
-    if not file.filename.lower().endswith(".pdf"):
+async def _save_upload(file: UploadFile, destination: Path) -> None:
+    total = 0
+    first_chunk = True
+
+    try:
+        with destination.open("xb") as output:
+            while chunk := await file.read(UPLOAD_CHUNK_BYTES):
+                if first_chunk and not chunk.startswith(b"%PDF-"):
+                    raise HTTPException(status_code=400, detail="Uploaded file is not a PDF.")
+                first_chunk = False
+                total += len(chunk)
+                if total > MAX_UPLOAD_BYTES:
+                    raise HTTPException(status_code=413, detail="PDF exceeds upload size limit.")
+                output.write(chunk)
+    except Exception:
+        destination.unlink(missing_ok=True)
+        raise
+    finally:
+        await file.close()
+
+    if total == 0:
+        destination.unlink(missing_ok=True)
+        raise HTTPException(status_code=400, detail="Uploaded PDF is empty.")
+
+
+@app.post(
+    "/api/v1/anonymize",
+    response_model=AnonymizeResponse,
+    status_code=status.HTTP_202_ACCEPTED,
+    summary="Submit PDF for PII anonymization",
+)
+async def submit_anonymization(file: UploadFile = File(...)) -> AnonymizeResponse:
+    filename = file.filename or ""
+    if not filename.lower().endswith(".pdf"):
         raise HTTPException(status_code=400, detail="Only PDF files are supported.")
 
-    job_id = str(uuid.uuid4())
-    job_dir = os.path.join(JOBS_DIR, job_id)
-    os.makedirs(job_dir, exist_ok=True)
+    job_id = str(uuid4())
+    paths = get_job_paths(job_id, create=True)
+    await _save_upload(file, paths.input_pdf)
 
-    input_pdf_path = os.path.join(job_dir, "input.pdf")
-    output_pdf_path = os.path.join(job_dir, "anonymized.pdf")
-
-    # Save uploaded PDF to job directory
-    with open(input_pdf_path, "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
-
-    # Register job state
-    jobs_db[job_id] = {
-        "job_id": job_id,
-        "status": "pending",
-        "input_path": input_pdf_path,
-        "output_path": output_pdf_path,
-        "masked_tokens_count": 0,
-        "error": None
-    }
-    save_jobs_db()
-
-    # Dispatch background task
-    background_tasks.add_task(
-        execute_anonymization_job,
-        job_id=job_id,
-        input_pdf_path=input_pdf_path,
-        output_pdf_path=output_pdf_path,
-        ocr_processor=app.state.ocr_processor,
-        pii_detector=app.state.pii_detector,
-        page_masker=app.state.page_masker
+    save_job(
+        job_id,
+        status="queued",
+        current_page=0,
+        total_pages=0,
+        percent=0,
+        masked_tokens_count=0,
+        error=None,
     )
+
+    try:
+        celery_app.send_task("web.tasks.anonymize_pdf_task", args=[job_id])
+    except Exception as exc:
+        save_job(job_id, status="failed", error="Task queue is unavailable")
+        raise HTTPException(status_code=503, detail="Task queue is unavailable.") from exc
 
     return AnonymizeResponse(
         job_id=job_id,
-        status="pending",
-        message="PDF submitted successfully for background anonymization."
+        status="queued",
+        message="PDF queued for background anonymization.",
     )
 
 
 @app.get("/api/v1/jobs/{job_id}", response_model=JobStatusResponse, summary="Get Job Status")
-def get_job_status(job_id: str):
-    """Returns current status and token count of an anonymization job."""
-    if job_id not in jobs_db:
-        raise HTTPException(status_code=404, detail=f"Job '{job_id}' not found.")
-
-    job = jobs_db[job_id]
-    return JobStatusResponse(
-        job_id=job["job_id"],
-        status=job["status"],
-        masked_tokens_count=job.get("masked_tokens_count", 0),
-        error=job.get("error")
-    )
+def get_job_status(job_id: str) -> JobStatusResponse:
+    try:
+        job = get_job(job_id)
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail="Job not found.") from exc
+    if job is None:
+        raise HTTPException(status_code=404, detail="Job not found.")
+    return JobStatusResponse(**job)
 
 
 @app.get("/api/v1/jobs/{job_id}/download", summary="Download Anonymized PDF")
-def download_anonymized_pdf(job_id: str):
-    """Downloads anonymized PDF file if processing is completed."""
-    if job_id not in jobs_db:
-        raise HTTPException(status_code=404, detail=f"Job '{job_id}' not found.")
+def download_anonymized_pdf(job_id: str) -> FileResponse:
+    try:
+        job = get_job(job_id)
+        paths = get_job_paths(job_id)
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail="Job not found.") from exc
 
-    job = jobs_db[job_id]
-    if job["status"] != "completed":
-        raise HTTPException(
-            status_code=400,
-            detail=f"Job '{job_id}' is not completed yet (current status: '{job['status']}')."
-        )
-
-    output_path = job["output_path"]
-    if not os.path.exists(output_path):
-        raise HTTPException(status_code=500, detail="Anonymized output file missing.")
+    if job is None:
+        raise HTTPException(status_code=404, detail="Job not found.")
+    if job.get("status") != "completed":
+        raise HTTPException(status_code=409, detail="Job is not completed.")
+    if not paths.output_pdf.is_file():
+        raise HTTPException(status_code=500, detail="Anonymized output file is missing.")
 
     return FileResponse(
-        path=output_path,
+        path=paths.output_pdf,
         media_type="application/pdf",
-        filename=f"anonymized_{job_id[:8]}.pdf"
+        filename=f"anonymized_{job_id[:8]}.pdf",
     )
 
 
-# Serve root index.html and static frontend assets
+@app.get("/api/v1/jobs/{job_id}/preview", summary="Preview Anonymized PDF")
+def preview_anonymized_pdf(job_id: str) -> FileResponse:
+    try:
+        job = get_job(job_id)
+        paths = get_job_paths(job_id)
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail="Job not found.") from exc
+
+    if job is None:
+        raise HTTPException(status_code=404, detail="Job not found.")
+    if job.get("status") != "completed":
+        raise HTTPException(status_code=409, detail="Job is not completed.")
+    if not paths.output_pdf.is_file():
+        raise HTTPException(status_code=500, detail="Anonymized output file is missing.")
+
+    return FileResponse(
+        path=paths.output_pdf,
+        media_type="application/pdf",
+        filename=f"anonymized_{job_id[:8]}.pdf",
+        content_disposition_type="inline",
+    )
+
+
 @app.get("/", include_in_schema=False)
-def serve_index():
-    index_path = os.path.join(STATIC_DIR, "index.html")
-    if os.path.exists(index_path):
+def serve_index() -> FileResponse:
+    index_path = STATIC_DIR / "index.html"
+    if index_path.is_file():
         return FileResponse(index_path)
     raise HTTPException(status_code=404, detail="UI index.html missing.")
 
 
-if os.path.exists(STATIC_DIR):
+if STATIC_DIR.is_dir():
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")

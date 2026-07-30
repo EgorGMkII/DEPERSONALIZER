@@ -104,17 +104,22 @@ def split_line_into_word_tokens(
 class OCRProcessor:
     def __init__(self):
         print("Initializing PaddleOCR model (lang='ru', without UVDoc warping)...")
+        cpu_threads = max(1, int(os.getenv("PADDLE_CPU_THREADS", "4")))
+        enable_mkldnn = os.getenv("PADDLE_ENABLE_MKLDNN", "0") == "1"
         self.ocr = PaddleOCR(
             use_angle_cls=False,
             use_doc_orientation_classify=False,
             use_doc_unwarping=False,
+            text_detection_model_name="PP-OCRv5_mobile_det",
             lang='ru',
-            enable_mkldnn=False
+            enable_mkldnn=enable_mkldnn,
+            cpu_threads=cpu_threads
         )
 
     def process_ocr_page(self, image: Image.Image, page_num: int, verbose: bool = False) -> List[LineContainer]:
         """Runs PaddleOCR on a single page image and returns 2-level LineContainers."""
-        img_np = np.array(image)
+        with image.convert('RGB') as image_rgb:
+            img_np = np.array(image_rgb)
         ocr_result = self.ocr.ocr(img_np)
 
         if not ocr_result:

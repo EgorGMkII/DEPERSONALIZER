@@ -91,8 +91,9 @@ def _save_pdf(page_paths: list[Path], output_path: Path, dpi: int) -> None:
 
 
 @celery_app.task(name="web.tasks.anonymize_pdf_task", bind=True)
-def anonymize_pdf_task(self: Any, job_id: str, dpi: int = 170) -> dict[str, Any]:
+def anonymize_pdf_task(self: Any, job_id: str, dpi: int | None = None) -> dict[str, Any]:
     """Process one job; all filesystem paths are derived from its validated UUID."""
+    dpi = dpi or int(os.getenv("OCR_DPI", "144"))
     paths = get_job_paths(job_id)
 
     if paths.output_pdf.is_file():
@@ -130,7 +131,7 @@ def anonymize_pdf_task(self: Any, job_id: str, dpi: int = 170) -> dict[str, Any]
             error=None,
         )
 
-        _log_stage(job_id, f"initializing models for {total_pages} page(s)")
+        _log_stage(job_id, f"initializing models for {total_pages} page(s) at {dpi} DPI")
         ocr = get_ocr_processor()
         pii = get_pii_detector()
         masker = get_page_masker()

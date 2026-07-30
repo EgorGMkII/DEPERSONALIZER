@@ -64,6 +64,7 @@ services:
       NUMEXPR_NUM_THREADS: "1"
       PADDLE_CPU_THREADS: "4"
       PADDLE_ENABLE_MKLDNN: "0"
+      OCR_DPI: "144"
       MALLOC_ARENA_MAX: "2"
     depends_on:
       redis:

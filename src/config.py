@@ -44,8 +44,8 @@ REGEX_PATTERNS = [
     re.compile(r'\b\d{9,15}\b|(?<=/)\d{9,12}(?=/)|(?<=[А-Яа-яA-Za-z/])\d{9,12}'),
     # Email
     re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'),
-    # Dates (including glued prefixes like "по15.052027" or "19.022026")
-    re.compile(r'(?:с|по)?\b\d{2}[\.\/]?\d{2}[\.\/]?\d{4}\b|\b\d{2}[\.\/]\d{2}[\.\/]\d{2}\b'),
+    # Dates (strictly 2-digit day/month and 2 or 4-digit year)
+    re.compile(r'\b\d{2}[\.\/]\d{2}[\.\/]\d{2,4}\b'),
     # Russian/Latin Initials (e.g. "Г.В. Козина", "A.A", "D.U.") - 1 or 2 dots supported
     re.compile(r'\b[А-ЯЁA-Z]\.\s?[А-ЯЁA-Z]\.?[\)\.\,]*\s?[А-ЯЁA-Z][а-яёA-Za-z\-]+\b'),
     # Surname + Initials (e.g., "Некрасову М.В." or "(Некрасов М.В.).")

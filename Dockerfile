@@ -11,6 +11,7 @@ ENV OPENBLAS_NUM_THREADS=1
 ENV NUMEXPR_NUM_THREADS=1
 ENV PADDLE_CPU_THREADS=4
 ENV PADDLE_ENABLE_MKLDNN=0
+ENV OCR_DPI=144
 ENV MALLOC_ARENA_MAX=2
 
 # Install required Linux system packages (poppler for pdf2image, libgl1/libglx-mesa0/libgomp1 for OpenCV & PaddleOCR)

@@ -19,7 +19,7 @@ from src.masker import PageMasker
 def anonymize_pdf(
     input_path: str,
     output_path: str,
-    dpi: int = 170,
+    dpi: int = 144,
     padding_px: int = 2,
     poppler_path: Optional[str] = None,
     verbose: bool = False,
@@ -92,7 +92,7 @@ def main():
     )
     parser.add_argument("--input", "-i", required=True, help="Path to input PDF file")
     parser.add_argument("--output", "-o", required=True, help="Path to save output anonymized PDF file")
-    parser.add_argument("--dpi", type=int, default=170, help="DPI for PDF page rasterization (default: 170)")
+    parser.add_argument("--dpi", type=int, default=144, help="DPI for PDF page rasterization (default: 144)")
     parser.add_argument("--padding", type=int, default=2, help="Padding in pixels for polygon masking (default: 2)")
     parser.add_argument("--max-pages", "-p", type=int, help="Limit processing to first N pages")
     parser.add_argument("--debug-dir", help="Directory to save intermediate 3-stage debug artifacts")
